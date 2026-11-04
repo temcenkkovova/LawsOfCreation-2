@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56bedff7237bfa4b963942386a681cd, type: 3}
+  m_Name: MaxSpeedRule
+  m_EditorClassIdentifier: 
+  indexRule: 1
+  description: Enemies rush forward at increased speed.
+  smallDescription: Enemies move faster.
+  title: Swift March
+  icon: {fileID: 21300000, guid: 55aeccb6742fd9e4ebe33fc577938422, type: 3}
+  ruleType: 0
+  minWave: 1
+  difficulty: 0
+  rewardMultiply: 0.5
+  styleConfig: {fileID: 11400000, guid: 65472d7491d68224ebf5ef6cf592b0ce, type: 2}
+  MaxSpeed: 1.25

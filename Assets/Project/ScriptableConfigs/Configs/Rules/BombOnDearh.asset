@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c7978376b6fe74a9457c76d88dee29, type: 3}
+  m_Name: BombOnDearh
+  m_EditorClassIdentifier: 
+  indexRule: 5
+  description: Enemies leave behind a bomb that explodes after death.
+  smallDescription: Enemies explode upon death.
+  title: Death Explosion
+  icon: {fileID: 21300000, guid: 4a093a8d3864bab4c9f540c83dd1fa22, type: 3}
+  ruleType: 1
+  minWave: 5
+  difficulty: 0
+  rewardMultiply: 0.3
+  styleConfig: {fileID: 11400000, guid: bb4b34baa64dcb84889b1075fa461959, type: 2}
+  bombAbilityPrefab: {fileID: 5762226814972428583, guid: 3481c5a180d4ad64998e359e116eba16, type: 3}

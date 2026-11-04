@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ad90a4316a86c44a87fe0c0bc0071e, type: 3}
+  m_Name: YellowStyle
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.44705883, g: 0.30980393, b: 0, a: 1}
+  borderColor: {r: 0.9529412, g: 0.7137255, b: 0.050980393, a: 1}
+  glowColorInside: {r: 0, g: 0, b: 0, a: 0.4745098}
+  baseBackground: {r: 0, g: 0, b: 0, a: 0.8}
+  backgroundImageTitle: {r: 0.74509805, g: 0.5372549, b: 0.15686275, a: 0.21960784}
+  backgroundImageTitleGlow: {r: 0.98039216, g: 0.8745098, b: 0, a: 0.12941177}
+  imageTitle: {r: 1, g: 0.7607843, b: 0, a: 1}
+  baseBtn: {r: 0.69803923, g: 0.5568628, b: 0.1882353, a: 0.11372549}
+  baseBtnBorder: {r: 1, g: 0.72156864, b: 0, a: 1}
+  baseBtnGlow: {r: 0.2627451, g: 0.20784314, b: 0.06666667, a: 1}
+  btnText: {r: 1, g: 0.72156864, b: 0, a: 1}

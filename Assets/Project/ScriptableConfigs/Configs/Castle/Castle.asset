@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe475c30aede0a46b9c8e6a6a09dc57, type: 3}
+  m_Name: Castle
+  m_EditorClassIdentifier: 
+  Health: 20
+  attackConfig: {fileID: 11400000, guid: ff87f45871e8aa743ad94649ac43e905, type: 2}
+  audioConfig: {fileID: 11400000, guid: 0446cb251ac5f02479029723853b38ed, type: 2}

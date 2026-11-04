@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ad90a4316a86c44a87fe0c0bc0071e, type: 3}
+  m_Name: PinkStyle
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.62616426, g: 0, b: 0.8113208, a: 1}
+  borderColor: {r: 0.6890194, g: 0.14925243, b: 0.8113208, a: 1}
+  glowColorInside: {r: 0.6336729, g: 0.06581525, b: 0.8207547, a: 0.4745098}
+  baseBackground: {r: 0, g: 0, b: 0, a: 0.8}
+  backgroundImageTitle: {r: 0.8837029, g: 0.3915094, b: 1, a: 0.21960784}
+  backgroundImageTitleGlow: {r: 0.87918204, g: 0, b: 0.98039216, a: 0.12941177}
+  imageTitle: {r: 0.8473487, g: 0, b: 1, a: 1}
+  baseBtn: {r: 0.5965892, g: 0.041073352, b: 0.6698113, a: 0.11372549}
+  baseBtnBorder: {r: 0.74512374, g: 0, b: 0.9433962, a: 1}
+  baseBtnGlow: {r: 0.33181742, g: 0.015574946, b: 0.4716981, a: 1}
+  btnText: {r: 0.64131486, g: 0.02616591, b: 0.7924528, a: 1}

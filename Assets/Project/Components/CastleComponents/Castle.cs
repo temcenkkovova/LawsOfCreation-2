@@ -1,0 +1,90 @@
+using System;
+using UnityEngine;
+
+
+
+public class Castle : MonoBehaviour, ISellable, ITowerSelectable
+{
+  public TowerConfig config;
+
+  public CastleHealth health;
+  public int BuyCost => config.cost;
+
+  private Attack attack;
+  private CastleAttackController castleAttackController;
+  private FindEnemySystem findEnemySystem;
+  public event Action<Castle> OnSelected;
+  public Transform VisualRoot;
+  [NonSerialized] public GameObject newVisual;
+  private AttackAudio attackAudio;
+  private CastleLevelSystem castleLevelSystem;
+
+
+  [NonSerialized] public BuildSpot buildSpot;
+  private EnemyWaveController enemyController;
+
+
+  void Awake()
+  {
+    findEnemySystem = GetComponent<FindEnemySystem>();
+    castleAttackController = GetComponent<CastleAttackController>();
+    attack = GetComponent<Attack>();
+    attackAudio = GetComponent<AttackAudio>();
+    castleLevelSystem = GetComponent<CastleLevelSystem>();
+    castleLevelSystem.OnNewTowerData += NewLevelData;
+  }
+  void Start()
+  {
+    if (!buildSpot) return;
+    buildSpot.ShowTowerSpot(false);
+  }
+  public void SetConfig(TowerConfig castleConfig, EnemyWaveController enemyWaveController)
+  {
+    config = castleConfig;
+    enemyController = enemyWaveController;
+
+  }
+
+  public void NewLevelData(TowerLevel towerLevel)
+  {
+    if (health && attack && castleAttackController && findEnemySystem && attackAudio)
+    {
+      health.Init(towerLevel.Health);
+      attack.InitConfigs(towerLevel.attackConfig, config.audioConfig);
+      castleAttackController.SetConfig(towerLevel.attackConfig);
+      IEnemyProvider provider = enemyController as IEnemyProvider;
+
+      findEnemySystem.SetConfigData(towerLevel.attackConfig, provider);
+      attackAudio.Init(towerLevel.audioConfig);
+
+    }
+  }
+
+  public int GetSellValue()
+  {
+    return BuyCost;
+  }
+  public void OnSell()
+  {
+    buildSpot.spotCastle = null;
+    buildSpot.ShowTowerSpot(true);
+    Destroy(gameObject);
+
+  }
+  public void SetTowerSpot(BuildSpot spot)
+  {
+    buildSpot = spot;
+  }
+
+  public void Selected()
+  {
+
+    OnSelected?.Invoke(this);
+  }
+
+  public void OnDisable()
+  {
+    castleLevelSystem.OnNewTowerData -= NewLevelData;
+  }
+
+}

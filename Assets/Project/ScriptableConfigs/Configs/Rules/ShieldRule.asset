@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b863632dbee0e954f8e5b5af9ec87c8a, type: 3}
+  m_Name: ShieldRule
+  m_EditorClassIdentifier: 
+  indexRule: 3
+  description: Enemies spawn with a shield that must be broken first.
+  smallDescription: Enemies gain a protective shield.
+  title: Arcane Barrier
+  icon: {fileID: 21300000, guid: 0b7014c211fd2a24db3b8c55e59fc1b4, type: 3}
+  ruleType: 0
+  minWave: 2
+  difficulty: 0
+  rewardMultiply: 1
+  styleConfig: {fileID: 11400000, guid: 984396d582029ae469c014a378290fe0, type: 2}
+  ShieldHealth: 200
+  scalePrefab: {x: 1, y: 1, z: 1}

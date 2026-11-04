@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65b29c5260ceb44eaaf78b1330fff77, type: 3}
+  m_Name: MaxHealthRule
+  m_EditorClassIdentifier: 
+  indexRule: 0
+  description: Enemies become tougher and harder to kill.
+  smallDescription: Enemies gain increased maximum health.
+  title: Fortified Flesh
+  icon: {fileID: 21300000, guid: 25e718eadb818844a9d418c666143eb5, type: 3}
+  ruleType: 0
+  minWave: 1
+  difficulty: 0
+  rewardMultiply: 0.5
+  styleConfig: {fileID: 11400000, guid: ef2af8e93fb373f4f95fc17705643a2c, type: 2}
+  MaxHealth: 0.4
+  scalePrefab: {x: 1, y: 1, z: 1}

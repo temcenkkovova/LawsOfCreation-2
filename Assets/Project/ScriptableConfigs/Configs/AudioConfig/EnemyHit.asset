@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c013a75eb2c4f74b9271a23cff702fe, type: 3}
+  m_Name: EnemyHit
+  m_EditorClassIdentifier: 
+  hitClips:
+  - {fileID: 8300000, guid: d2bca8ed57d36f74da1269e5c60ba549, type: 3}
+  deathClips: []
+  volume: 1
+  pitchMin: 0.95
+  pitchMax: 1.05
