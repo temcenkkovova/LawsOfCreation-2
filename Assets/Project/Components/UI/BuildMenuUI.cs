@@ -29,10 +29,11 @@ public class BuildMenuUI : MonoBehaviour
   {
     spotManager.SetCurrentSpot(spot);
 
+    Vector3 panelPos = new Vector3(spot.transform.position.x, 2f, spot.transform.position.z);
+    Vector3 localPos = Camera.main.WorldToScreenPoint(panelPos);
 
-    Vector3 panelPos = Camera.main.WorldToScreenPoint(spot.transform.position);
 
-    panel.transform.position = panelPos;
+    panel.transform.position = localPos;
 
 
     panel.SetActive(true);

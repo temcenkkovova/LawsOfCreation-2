@@ -16,7 +16,7 @@ public class BuildSpot : MonoBehaviour
   public void ClickSpot()
   {
     if (!readToBuild) return;
-    BuildMenuUI.Instance.Open(this);
+    //BuildMenuUI.Instance.Open(this);
   }
   public void ShowTowerSpot(bool newStatus)
   {
