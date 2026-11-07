@@ -1,48 +1,96 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CastleClickManager : MonoBehaviour
 {
   [SerializeField] private LayerMask clickableMask;
   private BuildSpot currentBuildStop;
-  private bool isOpen = false;
+  private ITowerSelectable currentTowerSelected;
+  private Castle selectedCastle;
+  private void ClearTowerSelection()
+  {
+    if (selectedCastle != null)
+      selectedCastle.OnSell -= HandleTowerSold;
+
+    // Проверяем существование Unity-компонента за интерфейсом.
+    if (currentTowerSelected is MonoBehaviour component && component != null)
+      currentTowerSelected.UnSelected();
+
+    currentTowerSelected = null;
+    selectedCastle = null;
+  }
+  private void HandleTowerSold(Castle soldCastle)
+  {
+    ClearTowerSelection();
+  }
   void Update()
   {
 
     if (Input.GetMouseButtonDown(0))
     {
-
+      if (EventSystem.current != null &&
+            EventSystem.current.IsPointerOverGameObject())
+      {
+        return;
+      }
       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
       RaycastHit hit;
 
-      if (Physics.Raycast(ray, out hit, 100f, clickableMask))
+      if (Physics.Raycast(ray, out hit, 250f, clickableMask))
       {
-        // Башня
-        var tower = hit.collider.GetComponent<ITowerSelectable>();
-        if (tower != null)
-        {
-          tower.Selected();
 
+
+        // Tower upgrade menu
+        ITowerSelectable newTowerSelected = hit.collider.GetComponent<ITowerSelectable>();
+        if (newTowerSelected != null)
+        {
+          if (newTowerSelected == currentTowerSelected)
+            return;
+          currentBuildStop?.HideSpotUIMenu();
+          currentBuildStop = null;
+
+          ClearTowerSelection();
+
+
+          currentTowerSelected = newTowerSelected;
+          selectedCastle = newTowerSelected as Castle;
+          if (selectedCastle != null)
+            selectedCastle.OnSell += HandleTowerSold;
+
+          currentTowerSelected.Selected();
+          return;
         }
-
-        // Место строительства
-        currentBuildStop = hit.collider.GetComponent<BuildSpot>();
-
-        if (currentBuildStop != null && !isOpen)
+        // Build slot place
+        BuildSpot newSpot = hit.collider.GetComponent<BuildSpot>();
+        if (newSpot != null)
         {
-
+          if (newSpot == currentBuildStop) return;
+          Debug.Log("qs");
+          ClearTowerSelection();
+          currentBuildStop?.HideSpotUIMenu();
+          currentBuildStop = newSpot;
           currentBuildStop.ClickSpot();
-          isOpen = true;
-
+          return;
         }
       }
       else
       {
-        if (currentBuildStop != null)
-        {
-          currentBuildStop.HideSpotUIMenu();
-          isOpen = false;
-        }
+
+        if (currentBuildStop != null) currentBuildStop.HideSpotUIMenu();
+
+
+        currentBuildStop = null;
+        ClearTowerSelection();
       }
     }
+  }
+  private void OnDisable()
+  {
+    ClearTowerSelection();
+
+    if (currentBuildStop != null)
+      currentBuildStop.HideSpotUIMenu();
+
+    currentBuildStop = null;
   }
 }

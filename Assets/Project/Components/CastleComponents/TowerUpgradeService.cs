@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class TowerUpgradeService : MonoBehaviour
 {
   public GameEconomy gameEconomy;
   public static TowerUpgradeService Instance;
+  public event Action OnUpgrade;
 
 
   void Awake()
@@ -12,7 +14,7 @@ public class TowerUpgradeService : MonoBehaviour
   }
 
 
-  public void TryUpgradeTower(Castle castle, PanelMenuItemsUI panelMenuItemsUI)
+  public void TryUpgradeTower(Castle castle)
   {
     CastleLevelSystem castleLevelSystem = castle.GetComponent<CastleLevelSystem>();
     if (castleLevelSystem == null) return;
@@ -21,7 +23,9 @@ public class TowerUpgradeService : MonoBehaviour
     if (gameEconomy.TrySpend(castleLevelSystem.UpdateCost))
     {
       castleLevelSystem.ApplyLevel(castleLevelSystem.currentTowerLevel + 1);
-      TowerMenuUI.Instance.Close();
+      castle.UnSelected();
+      OnUpgrade?.Invoke();
+      //TowerMenuUI.Instance.Close();
     }
   }
 

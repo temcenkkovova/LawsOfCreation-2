@@ -5,7 +5,7 @@ public class TowerBuildController : MonoBehaviour
 {
   public TowerConfig towerConfig;
   public GameEconomy gameEconomy;
-  public event Action OnTowerBuilded;
+  public event Action<BuildSpot> OnTowerBuilded;
   private float buildedTowersAmount = 0;
   public float BuildedTowersAmount => buildedTowersAmount;
   public EnemyWaveController enemyWaveController;
@@ -14,23 +14,24 @@ public class TowerBuildController : MonoBehaviour
 
   void Start()
   {
-    GameEconomy.Instance.OnSellTower += ChangeBuildedTowersAmount;
+    // GameEconomy.Instance.OnSellTower += ChangeBuildedTowersAmount;
   }
 
   void OnDisable()
   {
-    GameEconomy.Instance.OnSellTower -= ChangeBuildedTowersAmount;
+    // GameEconomy.Instance.OnSellTower -= ChangeBuildedTowersAmount;
   }
   public void Init(TowerConfig config)
   {
     towerConfig = config;
 
   }
-  public void ChangeBuildedTowersAmount()
+  public void ReduceBuildedTowersAmount(Castle castle)
   {
+    castle.OnSell -= ReduceBuildedTowersAmount;
     if (buildedTowersAmount > 0)
       buildedTowersAmount--;
-    OnTowerBuilded?.Invoke();
+    //OnTowerBuilded?.Invoke();
   }
   public void InitAmountMaxTowers(float amount)
   {
@@ -56,11 +57,12 @@ public class TowerBuildController : MonoBehaviour
       Vector3 pos = new Vector3(buildSpot.transform.position.x, 0f, buildSpot.transform.position.z);
       Castle castle = Instantiate(towerConfig.prefab, pos, rotation);
       castle.SetConfig(towerConfig, enemyWaveController);
-      //castle.SetTowerSpot(spotManager.CurrentBuildSpot);
+      castle.SetTowerSpot(buildSpot);
+      castle.OnSell += ReduceBuildedTowersAmount;
       //spotManager.CurrentBuildSpot.SetSpotCastle(castle);
-      castle.OnSelected += CastleSelectionController.Instance.Select;
+      //castle.OnSelected += CastleSelectionController.Instance.Select;
       buildedTowersAmount++;
-      OnTowerBuilded?.Invoke();
+      OnTowerBuilded?.Invoke(buildSpot);
     }
   }
   public void ClearSection()

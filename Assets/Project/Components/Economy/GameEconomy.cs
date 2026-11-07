@@ -6,7 +6,7 @@ public class GameEconomy : MonoBehaviour
   public static GameEconomy Instance;
   public CoinRewards coinRewards;
   public float sellMultiplier = 0.7f;
-  public event Action OnSellTower;
+
   void Awake()
   {
     Instance = this;
@@ -26,10 +26,10 @@ public class GameEconomy : MonoBehaviour
   public void Sell(ISellable item)
   {
     if (item == null) return;
-    int refund = Mathf.RoundToInt(item.GetSellValue() * sellMultiplier);
-    coinRewards.ChangeBalance(+refund);
-    item.OnSell();
-    OnSellTower?.Invoke();
+    float refund = item.GetSellValue() * sellMultiplier;
+    coinRewards.ChangeBalance(refund);
+
+
   }
 
   public bool HasEnough(int amount)

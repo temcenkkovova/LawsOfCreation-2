@@ -11,13 +11,16 @@ public class BuildSpot : MonoBehaviour
   public event Action OnClose;
   public TowerBuildController towerBuildController;
 
+  void OnEnable()
+  {
+    if (towerBuildController != null)
+      towerBuildController.OnTowerBuilded += HideSpot;
+  }
   void Start()
   {
     GameEconomy.Instance.coinRewards.OnChangeRewardCoin += HasCoinToBuild;
 
     HasCoinToBuild();
-    if (towerBuildController != null)
-      towerBuildController.OnTowerBuilded += HideSpot;
   }
 
   void OnDisable()
@@ -28,14 +31,15 @@ public class BuildSpot : MonoBehaviour
   }
   public void ClickSpot()
   {
+
     if (!canBuild) return;
+
     OnSlotClicked?.Invoke();
   }
-  public void HideSpot()
+  public void HideSpot(BuildSpot spot)
   {
+    if (spot != this) return;
     canBuild = false;
-
-
     gameObject.SetActive(false);
   }
   public void HideSpotUIMenu()
@@ -64,7 +68,14 @@ public class BuildSpot : MonoBehaviour
 
   public void HandleClickBuildButton()
   {
+
     towerBuildController.BuildTower(this);
+  }
+
+  public void ActiveSlot()
+  {
+    canBuild = true;
+    gameObject.SetActive(canBuild);
   }
   // void OnMouseEnter()
   // {

@@ -52,7 +52,7 @@ public class WaveStateUI : MonoBehaviour
     possibleTowersBuildField.text = towerBuildController.towersPerWave.ToString();
 
   }
-  public void ShowBuildedTowerAmount()
+  public void ShowBuildedTowerAmount(BuildSpot spot)
   {
     buildedTowersField.text = towerBuildController.BuildedTowersAmount.ToString();
 

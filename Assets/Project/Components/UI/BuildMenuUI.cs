@@ -29,11 +29,11 @@ public class BuildMenuUI : MonoBehaviour
   }
   void OnEnable()
   {
-    buildController.OnTowerBuilded += Close;
+    //buildController.OnTowerBuilded += Close;
   }
   void OnDisable()
   {
-    buildController.OnTowerBuilded -= Close;
+    //buildController.OnTowerBuilded -= Close;
   }
 
   public void Open(BuildSpot spot)
@@ -48,31 +48,10 @@ public class BuildMenuUI : MonoBehaviour
     panel.SetActive(true);
   }
 
-  public void Close()
-  {
-    panel.SetActive(false);
-    //spotManager.SetCurrentSpot(null);
-    buildController.ClearSection();
-  }
-
-  private void Update()
-  {
-
-    if (!panel.activeSelf) return;
-
-    if (Input.GetMouseButtonDown(0))
-    {
-
-      if (!IsPointerOverUI())
-      {
-
-        Close();
-      }
-    }
-  }
-  private bool IsPointerOverUI()
-  {
-    return EventSystem.current.IsPointerOverGameObject();
-  }
+  // public void Close(BuildSpot spot)
+  // {
+  //   panel.SetActive(false);
+  //   buildController.ClearSection();
+  // }
 
 }

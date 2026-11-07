@@ -19,9 +19,13 @@ public class TowerSlotUI : MonoBehaviour
 
   void OnEnable()
   {
+    panel.SetActive(false);
     if (buildSpot != null)
+    {
       buildSpot.OnSlotClicked += ShowSlotPanel;
-    buildSpot.OnClose += HideSlotPanel;
+      buildSpot.OnClose += HideSlotPanel;
+    }
+
   }
 
   void Start()
@@ -32,7 +36,7 @@ public class TowerSlotUI : MonoBehaviour
 
   public void ShowSlotPanel()
   {
-    Debug.Log("q");
+    Debug.Log("qaas");
     panel.SetActive(true);
     //nameTowerField.text = config.name;
     //costField.text = config.cost.ToString();

@@ -8,17 +8,20 @@ TagManager:
   - Enemy
   - TargetTest
   - MainTarget
+  - Upgrade
+  - TowerMenu
+  - Sell
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UpdateBtn
   - Water
   - UI
   - TowerRange
   - Tower
   - Buildspot
-  - 
+  - SellBtn
   - 
   - 
   - 

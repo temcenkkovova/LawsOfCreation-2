@@ -3,54 +3,64 @@ using UnityEngine.EventSystems;
 
 public class TowerMenuUI : MonoBehaviour
 {
-  public GameObject panel;
-  public static TowerMenuUI Instance;
+
+
   public PanelMenuItemsUI panelMenuItemsUI;
-  private bool ignoreNextClick;
-  private void Awake()
+  public Castle castle;
+  private TowerUpgradeService towerUpgradeService;
+  private Canvas canvas;
+  void OnEnable()
   {
-    Instance = this;
-    panel.SetActive(false);
+    if (castle != null)
+    {
+      castle.OnSelected += Open;
+      castle.OnUnSelected += Close;
+    }
+
   }
-  public void Open(Castle castle)
+
+  void Awake()
   {
+    canvas = GetComponent<Canvas>();
+    canvas.worldCamera = Camera.main;
+  }
+  private void Start()
+  {
+    towerUpgradeService = castle.GetComponent<TowerUpgradeService>();
+    panelMenuItemsUI.gameObject.SetActive(false);
 
-    Vector3 panelPos = Camera.main.WorldToScreenPoint(castle.transform.position);
-    panel.transform.position = panelPos;
+
+  }
+  public void Open()
+  {
     panelMenuItemsUI.Init(castle);
-
-    panel.SetActive(true);
-    ignoreNextClick = true;
-
+    panelMenuItemsUI.gameObject.SetActive(true);
   }
   public void Close()
   {
-    panel.SetActive(false);
+    panelMenuItemsUI.gameObject.SetActive(false);
 
-    CastleSelectionController.Instance.current = null;
+    //CastleSelectionController.Instance.current = null;
   }
-  private void Update()
+
+  public void HandleClickUpdate()
   {
 
-    if (!panel.activeSelf) return;
-    if (ignoreNextClick)
-    {
-      ignoreNextClick = false;
-      return;
-    }
-
-    if (Input.GetMouseButtonDown(0))
-    {
-
-      if (!IsPointerOverUI())
-      {
-
-        CastleSelectionController.Instance.Clear();
-      }
-    }
+    TowerUpgradeService.Instance.TryUpgradeTower(castle);
   }
-  private bool IsPointerOverUI()
+  public void HandleClickSell()
   {
-    return EventSystem.current.IsPointerOverGameObject();
+
+    castle.SellItem();
+  }
+
+  void OnDisable()
+  {
+    if (castle != null)
+    {
+      castle.OnSelected -= Open;
+      castle.OnUnSelected -= Close;
+    }
+
   }
 }

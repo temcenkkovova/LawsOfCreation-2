@@ -13,11 +13,13 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   private Attack attack;
   private CastleAttackController castleAttackController;
   private FindEnemySystem findEnemySystem;
-  public event Action<Castle> OnSelected;
+  public event Action OnSelected;
   public Transform VisualRoot;
   [NonSerialized] public GameObject newVisual;
   private AttackAudio attackAudio;
   private CastleLevelSystem castleLevelSystem;
+  public event Action OnUnSelected;
+  public event Action<Castle> OnSell;
 
 
   [NonSerialized] public BuildSpot buildSpot;
@@ -33,11 +35,7 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
     castleLevelSystem = GetComponent<CastleLevelSystem>();
     castleLevelSystem.OnNewTowerData += NewLevelData;
   }
-  void Start()
-  {
-    if (!buildSpot) return;
-    //buildSpot.ShowTowerSpot(false);
-  }
+
   public void SetConfig(TowerConfig castleConfig, EnemyWaveController enemyWaveController)
   {
     config = castleConfig;
@@ -64,10 +62,13 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   {
     return BuyCost;
   }
-  public void OnSell()
+  public void SellItem()
   {
     //buildSpot.ownSpotCastle = null;
-    //buildSpot.ShowTowerSpot(true);
+    OnSell?.Invoke(this);
+    GameEconomy.Instance.Sell(this);
+    buildSpot.ActiveSlot();
+    UnSelected();
     Destroy(gameObject);
 
   }
@@ -79,7 +80,11 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   public void Selected()
   {
 
-    OnSelected?.Invoke(this);
+    OnSelected?.Invoke();
+  }
+  public void UnSelected()
+  {
+    OnUnSelected?.Invoke();
   }
 
   public void OnDisable()

@@ -10,6 +10,7 @@ public class PanelMenuItemsUI : MonoBehaviour
   public Button updateButton;
   public TMP_Text costUpdateField;
   private CastleLevelSystem castleLevelSystem;
+  private TowerUpgradeService towerUpgradeService;
 
 
   void OnEnable()
@@ -19,32 +20,25 @@ public class PanelMenuItemsUI : MonoBehaviour
 
   void OnDisable()
   {
-    if (castle != null)
-      castleLevelSystem.OnLevelChanged -= OnLevelChanged;
-
     GameEconomy.Instance.coinRewards.OnChangeRewardCoin -= RefreshUpdateButton;
+    if (castle != null) castleLevelSystem.OnLevelChanged -= OnLevelChanged;
+    if (towerUpgradeService != null) towerUpgradeService.OnUpgrade -= ShowTowerData;
   }
   public void Init(Castle castleRef)
   {
     castle = castleRef;
     castleLevelSystem = castle.GetComponent<CastleLevelSystem>();
-    if (castleLevelSystem)
-    {
-      castleLevelSystem.OnLevelChanged += OnLevelChanged;
-    }
+    towerUpgradeService = castle.GetComponent<TowerUpgradeService>();
+    // if (castleLevelSystem != null)
+    //castleLevelSystem.OnLevelChanged += OnLevelChanged;
 
+    //if (towerUpgradeService != null) towerUpgradeService.OnUpgrade += ShowTowerData;
 
     RefreshAll();
   }
-  public void HandleSellTower()
-  {
 
-    GameEconomy.Instance.Sell(CastleSelectionController.Instance.current);
-    TowerMenuUI.Instance.Close();
-  }
-  public void HandleUpgradeTower()
+  public void ShowTowerData()
   {
-    TowerUpgradeService.Instance.TryUpgradeTower(castle, this);
     levelFieldText.text = "Level : " + (castleLevelSystem.currentTowerLevel + 1);
     costUpdateField.text = castleLevelSystem.UpdateCost.ToString();
   }

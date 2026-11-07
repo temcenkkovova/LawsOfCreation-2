@@ -25,20 +25,20 @@ public class CastleSelectionController : MonoBehaviour
     Instance = this;
   }
 
-  public void Select(Castle castle)
+  public void Select()
   {
 
-    if (current == castle || !active) return;
-    current = castle;
+    // if (current == castle || !active) return;
+    // current = castle;
 
-    towerMenuUI.Open(castle);
+    // towerMenuUI.Open(castle);
   }
   public void Clear()
   {
 
-    current = null;
+    // current = null;
 
-    towerMenuUI.Close();
+    // towerMenuUI.Close();
   }
   public void IsActive(WaveController.WaveState state)
   {
