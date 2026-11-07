@@ -12,7 +12,7 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
   // It is better to have two lists of enemies: one for spawned enemies and another for  alive enemies. I can leave it like that for now.
   private List<Vector3> enemiesPaths = new();
   public MainCastle target;
-  private float spawnInterval = 2f;
+  private float spawnInterval = 4f;
   private Coroutine spawnCoroutine;
   public event Action OnAllEnemiesDefeated;
   private bool spawningFinished;

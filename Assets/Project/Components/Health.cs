@@ -8,7 +8,7 @@ public abstract class Health : MonoBehaviour, IDamageable
   public float currentHealth;
 
   public float CurrentHealth => currentHealth;
-
+  public float maxHealth;
   public event Action<float> OnHealthChanged;
   public event Action<DamageInfo> OnDamaged;
   public event Action OnDeath;
@@ -16,7 +16,7 @@ public abstract class Health : MonoBehaviour, IDamageable
 
   public void Init(float amount)
   {
-
+    maxHealth = amount;
     currentHealth = amount;
     OnHealthChanged?.Invoke(currentHealth);
 
