@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
 
   public void SetHealth(float value)
   {
-    Debug.Log("here");
+
     float percentage = value / health.maxHealth;
     float result = Mathf.Clamp01(percentage);
     fillImage.fillAmount = result;
@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour
   }
   void LateUpdate()
   {
-    // всегда смотрит в камеру
+
     transform.forward = Camera.main.transform.forward;
   }
 }

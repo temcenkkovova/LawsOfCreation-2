@@ -17,9 +17,10 @@ MonoBehaviour:
   waveDifficulties: 1
   pathType: 0
   enemies:
+  - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
@@ -29,8 +30,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
-  Reward: 200
-  maxTowerAmount: 4
+  - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
+  Reward: 30
+  maxTowerAmount: 3
+  spawnInterval: 1.5

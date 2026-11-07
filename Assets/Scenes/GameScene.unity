@@ -4757,6 +4757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  maxHealth: 0
   Shield: 0
 --- !u!114 &469071905
 MonoBehaviour:
@@ -16601,7 +16602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d92349101f4304b88407fd72d6be08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoins: 500
+  startCoins: 100
 --- !u!114 &1995114777
 MonoBehaviour:
   m_ObjectHideFlags: 0

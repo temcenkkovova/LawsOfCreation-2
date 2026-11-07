@@ -27,10 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  Reward: 100
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  Reward: 25
   maxTowerAmount: 3
+  spawnInterval: 2

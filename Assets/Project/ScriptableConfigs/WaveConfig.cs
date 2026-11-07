@@ -24,4 +24,5 @@ public class WaveConfig : ScriptableObject
   public List<EnemyConfig> enemies = new();
   public int Reward;
   public int maxTowerAmount;
+  public float spawnInterval;
 }

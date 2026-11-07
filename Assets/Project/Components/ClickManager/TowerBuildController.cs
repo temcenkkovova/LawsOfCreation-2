@@ -12,15 +12,7 @@ public class TowerBuildController : MonoBehaviour
   [NonSerialized] public float towersPerWave;
   public SpotManager spotManager;
 
-  void Start()
-  {
-    // GameEconomy.Instance.OnSellTower += ChangeBuildedTowersAmount;
-  }
 
-  void OnDisable()
-  {
-    // GameEconomy.Instance.OnSellTower -= ChangeBuildedTowersAmount;
-  }
   public void Init(TowerConfig config)
   {
     towerConfig = config;
@@ -48,7 +40,7 @@ public class TowerBuildController : MonoBehaviour
 
     if (!buildSpot || buildedTowersAmount >= towersPerWave)
     {
-      Debug.Log("Don`t have buildSpot or you builded MAX COUNT OF TOWERS");
+      Debug.Log("Don`t have free tower spot or you have  built MAX COUNT OF TOWERS");
     }
     else
     {
@@ -59,8 +51,6 @@ public class TowerBuildController : MonoBehaviour
       castle.SetConfig(towerConfig, enemyWaveController);
       castle.SetTowerSpot(buildSpot);
       castle.OnSell += ReduceBuildedTowersAmount;
-      //spotManager.CurrentBuildSpot.SetSpotCastle(castle);
-      //castle.OnSelected += CastleSelectionController.Instance.Select;
       buildedTowersAmount++;
       OnTowerBuilded?.Invoke(buildSpot);
     }

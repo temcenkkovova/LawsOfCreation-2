@@ -4,7 +4,7 @@ using UnityEngine;
 public class CoinRewards : MonoBehaviour
 {
   private float totalCoin;
-  [SerializeField] private float startCoins = 500f;
+  public float startCoins = 100f;
 
   public float TotalCoin => totalCoin;
   public event Action OnChangeRewardCoin;

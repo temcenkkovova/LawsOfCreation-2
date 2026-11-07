@@ -17,22 +17,22 @@ MonoBehaviour:
   levels:
   - Health: 200
     attackConfig: {fileID: 11400000, guid: 43a9e076ba989ba4ab7913ed8f27e4f7, type: 2}
-    updateCost: 120
+    updateCost: 60
     visualPrefab: {fileID: 6354948432566037670, guid: 588d263e33ce0ca408eb5ef31a48130a, type: 3}
     audioConfig: {fileID: 11400000, guid: e2499bc2021066d40ac8311dbc8545d0, type: 2}
   - Health: 400
     attackConfig: {fileID: 11400000, guid: baa5415db58dbc542be4189bd834bf20, type: 2}
-    updateCost: 150
+    updateCost: 100
     visualPrefab: {fileID: 615919423067172179, guid: 1e74a2e7ddde0484996dd6e4387b6147, type: 3}
     audioConfig: {fileID: 11400000, guid: a38027ca10edb8e40950aabc6e4563e7, type: 2}
   - Health: 600
     attackConfig: {fileID: 11400000, guid: c58382a747717114fa1c831b9a38f000, type: 2}
-    updateCost: 250
+    updateCost: 160
     visualPrefab: {fileID: 2599234519399111262, guid: 00b7cb9a66bc61d4caad74f88cb489cd, type: 3}
     audioConfig: {fileID: 11400000, guid: 0446cb251ac5f02479029723853b38ed, type: 2}
   - Health: 800
     attackConfig: {fileID: 11400000, guid: 1e502ff3e5e2c9b44a2de8aff3017401, type: 2}
-    updateCost: 400
+    updateCost: 220
     visualPrefab: {fileID: 6996476988228201941, guid: dbd5b9413a4ddef4cb1d842b30205ef9, type: 3}
     audioConfig: {fileID: 11400000, guid: 0446cb251ac5f02479029723853b38ed, type: 2}
   audioConfig: {fileID: 0}

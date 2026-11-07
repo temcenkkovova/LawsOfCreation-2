@@ -15,4 +15,4 @@ MonoBehaviour:
   attackDamage: 20
   attackInterval: 1
   attackType: 1
-  radiusAttack: 10
+  radiusAttack: 40

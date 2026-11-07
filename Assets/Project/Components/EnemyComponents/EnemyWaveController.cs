@@ -12,7 +12,7 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
   // It is better to have two lists of enemies: one for spawned enemies and another for  alive enemies. I can leave it like that for now.
   private List<Vector3> enemiesPaths = new();
   public MainCastle target;
-  private float spawnInterval = 4f;
+  private float spawnInterval;
   private Coroutine spawnCoroutine;
   public event Action OnAllEnemiesDefeated;
   private bool spawningFinished;
@@ -21,14 +21,16 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
   public List<Enemy> GetEnemies() => spawnedEnemies;
 
 
+
   void Awake()
   {
     //Instance = this;
   }
-  public void SetEnemyWave(List<EnemyConfig> enemies, List<Vector3> path)
+  public void SetEnemyWave(List<EnemyConfig> enemies, List<Vector3> path, float spawnInterval)
   {
     Enemies = enemies;
     enemiesPaths = new List<Vector3>(path);
+    this.spawnInterval = spawnInterval;
   }
 
   public void SpawnEnemyWave()
@@ -40,6 +42,8 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
     if (spawnCoroutine == null) return;
 
     StopCoroutine(spawnCoroutine);
+    spawnCoroutine = null;
+    spawningFinished = false;
   }
 
   void OnDisable()
@@ -73,10 +77,22 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
         enemy.SetData(item, new List<RuleConfig>(chooseRuleController.currentChooseRules), target, enemiesPaths);
       }
       enemy.health.OnEnemyDeath += HandleEnemyDeath;
-      if (spawnedEnemies.Count == Enemies.Count) spawningFinished = true;
+
 
       yield return new WaitForSeconds(spawnInterval);
+
+      spawnCoroutine = null;
+      spawningFinished = true;
+      CheckWaveCompleted();
     }
+  }
+  private void CheckWaveCompleted()
+  {
+    if (!spawningFinished || spawnedEnemies.Count > 0)
+      return;
+
+    spawningFinished = false;
+    OnAllEnemiesDefeated?.Invoke();
   }
   public void HandleEnemyDeath(Enemy enemy)
   {
@@ -85,9 +101,6 @@ public class EnemyWaveController : MonoBehaviour, IEnemyProvider
     coinRewards.ChangeBalance(+enemy.enemyConfig.coinReward);
     spawnedEnemies.Remove(enemy);
     enemyScore.IncreaseEnemyDeathAmount();
-    if (spawnedEnemies.Count == 0)
-    {
-      OnAllEnemiesDefeated?.Invoke();
-    }
+    CheckWaveCompleted();
   }
 }

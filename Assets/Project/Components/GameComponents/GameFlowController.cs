@@ -15,7 +15,7 @@ public class GameFlowController : MonoBehaviour
   void Awake()
   {
     waveController = GetComponent<WaveController>();
-    enemyWaveController = GetComponent<EnemyWaveController>(); // возможно надо будет сделать его public и передавать через inspector
+    enemyWaveController = GetComponent<EnemyWaveController>();
 
   }
   void Start()
@@ -30,7 +30,7 @@ public class GameFlowController : MonoBehaviour
     enemyWaveController.OnAllEnemiesDefeated -= FinishCurrentWave;
   }
 
-  /*Логику включение и выключение систем лучше вынести в другую компоненту */
+
   private void OnGameStateChanged(GameState state)
   {
     if (waveController == null) return;
@@ -52,7 +52,7 @@ public class GameFlowController : MonoBehaviour
 
     WaveConfig config = waveConfigs[currentIndexWave];
 
-    enemyWaveController.SetEnemyWave(config.enemies, pathManager.GetPath(config.pathType).pointers);
+    enemyWaveController.SetEnemyWave(config.enemies, pathManager.GetPath(config.pathType).pointers, config.spawnInterval);
     towerBuildController.InitAmountMaxTowers(config.maxTowerAmount);
     OnWaveIndexChanged?.Invoke();
     waveController.StartWave(config.indexWave, config.duration);

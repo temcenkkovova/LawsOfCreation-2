@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cbaeb8dc42cac498b9e92e5cac6725, type: 3}
   m_Name: TD-3Level
   m_EditorClassIdentifier: 
-  attackDamage: 40
+  attackDamage: 32
   attackInterval: 1.2
   attackType: 1
-  radiusAttack: 14
+  radiusAttack: 30

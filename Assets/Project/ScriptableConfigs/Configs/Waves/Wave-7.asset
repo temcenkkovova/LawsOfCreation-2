@@ -40,3 +40,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   Reward: 350
   maxTowerAmount: 7
+  spawnInterval: 1
