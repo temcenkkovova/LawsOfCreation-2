@@ -36,7 +36,7 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   void Start()
   {
     if (!buildSpot) return;
-    buildSpot.ShowTowerSpot(false);
+    //buildSpot.ShowTowerSpot(false);
   }
   public void SetConfig(TowerConfig castleConfig, EnemyWaveController enemyWaveController)
   {
@@ -66,8 +66,8 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   }
   public void OnSell()
   {
-    buildSpot.spotCastle = null;
-    buildSpot.ShowTowerSpot(true);
+    //buildSpot.ownSpotCastle = null;
+    //buildSpot.ShowTowerSpot(true);
     Destroy(gameObject);
 
   }

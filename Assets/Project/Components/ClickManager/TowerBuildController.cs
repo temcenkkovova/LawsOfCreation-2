@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TowerBuildController : MonoBehaviour
 {
-  [NonSerialized] public TowerConfig towerConfig;
+  public TowerConfig towerConfig;
   public GameEconomy gameEconomy;
   public event Action OnTowerBuilded;
   private float buildedTowersAmount = 0;
@@ -56,8 +56,8 @@ public class TowerBuildController : MonoBehaviour
       Vector3 pos = new Vector3(buildSpot.transform.position.x, 0f, buildSpot.transform.position.z);
       Castle castle = Instantiate(towerConfig.prefab, pos, rotation);
       castle.SetConfig(towerConfig, enemyWaveController);
-      castle.SetTowerSpot(spotManager.CurrentBuildSpot);
-      spotManager.CurrentBuildSpot.SetSpotCastle(castle);
+      //castle.SetTowerSpot(spotManager.CurrentBuildSpot);
+      //spotManager.CurrentBuildSpot.SetSpotCastle(castle);
       castle.OnSelected += CastleSelectionController.Instance.Select;
       buildedTowersAmount++;
       OnTowerBuilded?.Invoke();

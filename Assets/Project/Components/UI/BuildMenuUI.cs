@@ -1,5 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BuildMenuUI : MonoBehaviour
 {
@@ -8,7 +10,16 @@ public class BuildMenuUI : MonoBehaviour
   public GameObject panel;
   public TowerBuildController buildController;
 
+  public TMP_Text nameTowerField;
+  public TMP_Text costField;
+  public Sprite towerIcon;
+  public TowerSlot towerSlot;
+  public Image iconField;
+  public TMP_Text rangeField;
+  public TMP_Text damageField;
 
+
+  // It`s a build menu UI 
   public SpotManager spotManager;
 
   private void Awake()
@@ -27,13 +38,11 @@ public class BuildMenuUI : MonoBehaviour
 
   public void Open(BuildSpot spot)
   {
-    spotManager.SetCurrentSpot(spot);
-
-    Vector3 panelPos = new Vector3(spot.transform.position.x, 2f, spot.transform.position.z);
-    Vector3 localPos = Camera.main.WorldToScreenPoint(panelPos);
-
-
-    panel.transform.position = localPos;
+    panel.SetActive(true);
+    // nameTowerField.text = config.name;
+    // costField.text = config.cost.ToString();
+    damageField.text = "20";
+    rangeField.text = "2";
 
 
     panel.SetActive(true);

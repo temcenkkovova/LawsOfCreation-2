@@ -4,28 +4,48 @@ using UnityEngine;
 public class BuildSpot : MonoBehaviour
 {
   public bool isFree = true;
-  [NonSerialized] public Castle spotCastle;
+  [NonSerialized] public Castle ownSpotCastle;
   public SpriteRenderer visualSprite;
-  private bool readToBuild;
+  private bool canBuild;
+  public event Action OnSlotClicked;
+  public event Action OnClose;
+  public TowerBuildController towerBuildController;
 
   void Start()
   {
     GameEconomy.Instance.coinRewards.OnChangeRewardCoin += HasCoinToBuild;
+
     HasCoinToBuild();
+    if (towerBuildController != null)
+      towerBuildController.OnTowerBuilded += HideSpot;
+  }
+
+  void OnDisable()
+  {
+    GameEconomy.Instance.coinRewards.OnChangeRewardCoin -= HasCoinToBuild;
+    if (towerBuildController != null)
+      towerBuildController.OnTowerBuilded -= HideSpot;
   }
   public void ClickSpot()
   {
-    if (!readToBuild) return;
-    //BuildMenuUI.Instance.Open(this);
+    if (!canBuild) return;
+    OnSlotClicked?.Invoke();
   }
-  public void ShowTowerSpot(bool newStatus)
+  public void HideSpot()
   {
-    isFree = newStatus;
-    gameObject.SetActive(isFree);
+    canBuild = false;
+
+
+    gameObject.SetActive(false);
   }
+  public void HideSpotUIMenu()
+  {
+    OnClose?.Invoke();
+  }
+
   public void SetSpotCastle(Castle castle)
   {
-    spotCastle = castle;
+    ownSpotCastle = castle;
   }
   public void HasCoinToBuild()
   {
@@ -33,13 +53,18 @@ public class BuildSpot : MonoBehaviour
     {
 
       visualSprite.color = Color.white;
-      readToBuild = true;
+      canBuild = true;
     }
     else
     {
       visualSprite.color = Color.gray;
-      readToBuild = false;
+      canBuild = false;
     }
+  }
+
+  public void HandleClickBuildButton()
+  {
+    towerBuildController.BuildTower(this);
   }
   // void OnMouseEnter()
   // {

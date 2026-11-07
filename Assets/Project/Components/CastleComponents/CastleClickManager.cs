@@ -3,6 +3,8 @@ using UnityEngine;
 public class CastleClickManager : MonoBehaviour
 {
   [SerializeField] private LayerMask clickableMask;
+  private BuildSpot currentBuildStop;
+  private bool isOpen = false;
   void Update()
   {
 
@@ -19,17 +21,26 @@ public class CastleClickManager : MonoBehaviour
         if (tower != null)
         {
           tower.Selected();
-          return;
+
         }
 
         // Место строительства
-        var buildSpot = hit.collider.GetComponent<BuildSpot>();
+        currentBuildStop = hit.collider.GetComponent<BuildSpot>();
 
-        if (buildSpot != null)
+        if (currentBuildStop != null && !isOpen)
         {
 
-          buildSpot.ClickSpot();
-          return;
+          currentBuildStop.ClickSpot();
+          isOpen = true;
+
+        }
+      }
+      else
+      {
+        if (currentBuildStop != null)
+        {
+          currentBuildStop.HideSpotUIMenu();
+          isOpen = false;
         }
       }
     }

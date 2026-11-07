@@ -1,24 +1,53 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TowerSlotUI : MonoBehaviour
 {
-  public TMP_Text titleField;
+  public TMP_Text nameTowerField;
   public TMP_Text costField;
-  public TowerSlot towerSlot;
-  void Awake()
+  public Sprite towerIcon;
+
+  public BuildSpot buildSpot;
+  public Image iconField;
+  public TMP_Text rangeField;
+  public TMP_Text damageField;
+  public GameObject panel;
+  public LayerMask layerMask;
+
+
+  void OnEnable()
   {
-    towerSlot.OnTowerSlot += ShowSlotPanel;
+    if (buildSpot != null)
+      buildSpot.OnSlotClicked += ShowSlotPanel;
+    buildSpot.OnClose += HideSlotPanel;
   }
 
-  public void ShowSlotPanel(TowerConfig config)
+  void Start()
   {
-    titleField.text = config.name;
-    costField.text = config.cost.ToString();
+    panel.SetActive(false);
+
+  }
+
+  public void ShowSlotPanel()
+  {
+    Debug.Log("q");
+    panel.SetActive(true);
+    //nameTowerField.text = config.name;
+    //costField.text = config.cost.ToString();
+    damageField.text = "20";
+    rangeField.text = "2";
+
+  }
+  public void HideSlotPanel()
+  {
+    panel.SetActive(false);
   }
 
   void OnDisable()
   {
-    towerSlot.OnTowerSlot -= ShowSlotPanel;
+    buildSpot.OnSlotClicked -= ShowSlotPanel;
+    buildSpot.OnClose -= HideSlotPanel;
   }
 }
