@@ -26,10 +26,12 @@ public class AllRulesController : MonoBehaviour
 
     List<RuleConfig> copyListRules = new List<RuleConfig>(rules);
     int currentWave = gameFlowController.currentIndexWave + 1;
-    Debug.Log("tt");
-    Debug.Log(copyListRules.Count);
+
+
     for (int i = 0; i < cardsToShow; i++)
     {
+      if (copyListRules.Count == 0) break;
+
       int randomNumberIndex = Random.Range(0, copyListRules.Count);
 
       RuleConfig ruleConfig = copyListRules[randomNumberIndex];

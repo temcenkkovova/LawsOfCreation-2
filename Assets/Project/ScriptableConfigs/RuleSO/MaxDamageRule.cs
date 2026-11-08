@@ -10,6 +10,6 @@ public class MaxDamageRule : RuleConfig
   public override void Apply(Enemy enemy)
   {
     enemy.damage.SetModifier(MaxDamage);
-    enemy.transform.localScale += scalePrefab;
+    enemy.transform.localScale *= 1.2f;
   }
 }

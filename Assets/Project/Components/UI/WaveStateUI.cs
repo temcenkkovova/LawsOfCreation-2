@@ -43,7 +43,7 @@ public class WaveStateUI : MonoBehaviour
 
     bool active = state == WaveController.WaveState.Preparing;
     rulesPanel.SetActive(active);
-    startWaveBtn.interactable = active;
+    startWaveBtn.gameObject.SetActive(active);
   }
 
   public void ShowPossibleTowerAmount(int index)

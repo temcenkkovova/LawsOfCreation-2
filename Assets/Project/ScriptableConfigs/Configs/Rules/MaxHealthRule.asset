@@ -23,4 +23,4 @@ MonoBehaviour:
   rewardMultiply: 0.5
   styleConfig: {fileID: 11400000, guid: ef2af8e93fb373f4f95fc17705643a2c, type: 2}
   MaxHealth: 0.4
-  scalePrefab: {x: 1, y: 1, z: 1}
+  scalePrefab: {x: 3, y: 3, z: 3}

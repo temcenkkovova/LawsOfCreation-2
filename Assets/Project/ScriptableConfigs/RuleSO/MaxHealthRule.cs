@@ -10,6 +10,6 @@ public class MaxHealthRule : RuleConfig
   public override void Apply(Enemy enemy)
   {
     enemy.health.HealthMultiply(MaxHealth);
-    enemy.transform.localScale += scalePrefab;
+    enemy.transform.localScale *= 1.2f; // To make enemy visual greater;
   }
 }

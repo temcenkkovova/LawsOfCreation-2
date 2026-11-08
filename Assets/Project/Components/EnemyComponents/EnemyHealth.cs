@@ -11,7 +11,7 @@ public class EnemyHealth : Health
 
   public void HealthMultiply(float multiply)
   {
-    currentHealth = currentHealth * multiply;
+    currentHealth *= 1f + multiply;
   }
   public void SetShield(int shield)
   {
