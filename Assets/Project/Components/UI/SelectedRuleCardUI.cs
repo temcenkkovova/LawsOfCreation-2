@@ -11,10 +11,10 @@ public class SelectedRuleCardUI : MonoBehaviour
   {
     this.config = config;
     imageField.sprite = config.icon;
-    Color color = config.styleConfig.baseBtnBorder;
-    color.a = 255f;
-    imageField.color = color;
-    borderImage.color = color;
+    //Color color = config.styleConfig.baseBtnBorder;
+    //color.a = 255f;
+    // imageField.color = color;
+    //borderImage.color = color;
   }
 
 

@@ -20,21 +20,20 @@ public class RuleCardVFX : MonoBehaviour
 
   public void ApplyStyle(RuleStyleConfig styleConfig, bool ruleDifficulty)
   {
-    baseGlow.color = styleConfig.glowColor;
-    baseBorder.color = styleConfig.borderColor;
-    glowInside.color = styleConfig.glowColorInside;
-    baseBackground.color = styleConfig.baseBackground;
-    backgroundImageTitle.color = styleConfig.backgroundImageTitle;
-    backgroundImageTitleGlow.color = styleConfig.backgroundImageTitleGlow;
-    imageTitle.color = styleConfig.imageTitle;
-    baseBtn.color = styleConfig.baseBtn;
-    baseBtnBorder.color = styleConfig.baseBtnBorder;
-    baseBtnGlow.color = styleConfig.baseBtnGlow;
-    btnText.color = styleConfig.btnText;
+
+
+
+    //baseBackground.color = styleConfig.baseBackground;
+
+
+    //imageTitle.color = styleConfig.imageTitle;
+    //baseBtn.color = styleConfig.baseBtn;
+
+    //btnText.color = styleConfig.btnText;
 
     if (difficultyText)
     {
-      difficultyText.color = ruleDifficulty ? Color.green : Color.red;
+      //difficultyText.color = ruleDifficulty ? Color.green : Color.red;
     }
 
   }

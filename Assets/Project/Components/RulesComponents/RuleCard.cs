@@ -41,7 +41,7 @@ public class RuleCard : MonoBehaviour
     RuleCardUI leftCard = Instantiate(leftCardPrefab, leftCardSectionGrid);
     leftCard.SetData(rule, 0);
     iconRule.sprite = rule.icon;
-    detailImage.sprite = rule.icon;
+    //detailImage.sprite = rule.icon;
     title.text = rule.title;
     typeOfRule.text = rule.ruleType.ToString();
     description.text = rule.description;
