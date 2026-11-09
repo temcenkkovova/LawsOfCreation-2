@@ -16,6 +16,7 @@ public class EnemyHealth : Health
   public void SetShield(int shield)
   {
     Shield = shield;
+
   }
 
   protected override void Die()

@@ -22,5 +22,5 @@ MonoBehaviour:
   difficulty: 0
   rewardMultiply: 1
   styleConfig: {fileID: 11400000, guid: 984396d582029ae469c014a378290fe0, type: 2}
-  ShieldHealth: 200
+  ShieldHealth: 40
   scalePrefab: {x: 1, y: 1, z: 1}
