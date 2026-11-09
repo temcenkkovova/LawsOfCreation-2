@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 9f86b774233642449aaaaa3801d738b0
+  - enabled: 1
+    path: Assets/Scenes/Iron.unity
+    guid: 1e3fe8e0cd4ee404d90fa6bd97e1617d
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: 9f529cc69b351fb4e9375fdaa0876bbe
   m_configObjects: {}

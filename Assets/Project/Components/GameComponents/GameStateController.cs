@@ -1,16 +1,19 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum GameState { Gameplay, Menu, GameOver }
 public class GameStateController : MonoBehaviour
 {
-  public static GameStateController Instance { get; private set; } // делаю эту компоненту видимой для любой компоненты ( только get )
+  public static GameStateController Instance { get; private set; }
   public GameState CurrentState;
 
   public event Action<GameState> OnGameStateChanged;
   public event Action<bool> OnPauseChanged;
+  public float MainCastleHealth { get; private set; }
+  [NonSerialized] public List<RuleConfig> choseRuleConfig;
 
   public bool IsPause;
 
@@ -24,6 +27,14 @@ public class GameStateController : MonoBehaviour
 
     Instance = this;
     DontDestroyOnLoad(gameObject);
+  }
+
+  public void SaveDataForNextLevelScene(float health, List<RuleConfig> rules)
+  {
+    choseRuleConfig = null;
+    MainCastleHealth = health;
+
+    choseRuleConfig = new(rules);
   }
 
   /* I`ll use it when have Menu System

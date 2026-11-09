@@ -1,36 +1,23 @@
+
 using UnityEngine;
+
 
 public class LevelSceneController : MonoBehaviour
 {
   public MainCastleHealth mainCastleHealth;
+  public ChooseRuleController chooseRuleController;
 
-  // This system needs to save data before leaving the game .
-  //  So I need to save data during starting every scene (Level-scene) . When the new level-scene open I save the data (health , gold , rules)
-
-  public void SaveCastleHealth()
+  void OnDisable()
   {
-    float health = mainCastleHealth.CurrentHealth;
-    PlayerPrefs.SetFloat("CastleHealth", health);
+    SceneLevelManager.Instance.OnNextScene -= SaveCurrentSceneLevelData;
   }
-  public void SaveRules()
+  void Start()
   {
-
-
+    SceneLevelManager.Instance.OnNextScene += SaveCurrentSceneLevelData;
   }
-  public void SaveGold()
+  public void SaveCurrentSceneLevelData()
   {
-
-  }
-  public void SaveSettings()
-  {
-    PlayerPrefs.Save();
-  }
-
-  public void SaveData()
-  {
-    SaveCastleHealth();
-    SaveGold();
-    SaveRules();
-    SaveSettings();
+    if (mainCastleHealth == null || chooseRuleController == null) return;
+    GameStateController.Instance.SaveDataForNextLevelScene(mainCastleHealth.CurrentHealth, chooseRuleController.currentChooseRules);
   }
 }
