@@ -14,6 +14,7 @@ public class GameStateController : MonoBehaviour
   public event Action<bool> OnPauseChanged;
   public float MainCastleHealth { get; private set; }
   [NonSerialized] public List<RuleConfig> choseRuleConfig;
+  public bool IsStartData { get; private set; } = true;
 
   public bool IsPause;
 
@@ -35,6 +36,13 @@ public class GameStateController : MonoBehaviour
     MainCastleHealth = health;
 
     choseRuleConfig = new(rules);
+    IsStartData = false;
+  }
+  public void ResetData()
+  {
+    IsStartData = true;
+    choseRuleConfig = null;
+    MainCastleHealth = 0;
   }
 
   /* I`ll use it when have Menu System

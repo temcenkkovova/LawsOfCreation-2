@@ -10,6 +10,7 @@ public class SceneLevelManager : MonoBehaviour
   private int currentSceneIndex = 1; // Start from 1 because I`m already at the first level
   public List<string> scenes = new List<string>();
   public event Action OnNextScene;
+  public event Action OnRestartGame;
 
   public void TryStartNextScene()
   {
@@ -24,9 +25,12 @@ public class SceneLevelManager : MonoBehaviour
     SceneManager.LoadScene(scenes[index]);
     index++;
   }
-  public void ResetCurrentIndexScene()
+  public void RestartAllGame()
   {
-    currentSceneIndex = 0;
+    OnRestartGame?.Invoke();
+    currentSceneIndex = 1;
+    SceneManager.LoadScene("GameScene");
+
   }
   private void Awake()
   {
