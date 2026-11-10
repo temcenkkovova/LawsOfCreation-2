@@ -7922,7 +7922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &792342353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16796,13 +16796,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee05d77d0c86b7b4699a310f01a9451d, type: 2}
   - {fileID: 11400000, guid: 77662867a89f13741a6d5d4c1fda7528, type: 2}
   - {fileID: 11400000, guid: 06af5e4b80fed5b49829779a9c9fcea3, type: 2}
-  - {fileID: 11400000, guid: 9ce9dfdd4b255e74ca5f71c398244fe6, type: 2}
-  - {fileID: 11400000, guid: d90c090130f363740a47afd8f3717d8a, type: 2}
-  - {fileID: 11400000, guid: 9bddfbba9711bbf4da6c2be58c5d5095, type: 2}
-  - {fileID: 11400000, guid: 0c39a21d88359c248a7d9a921ec29d9a, type: 2}
-  - {fileID: 11400000, guid: 56c43d21374546a4dbbabdd28cb010ed, type: 2}
-  - {fileID: 11400000, guid: 84f4091e1443a5e43af37dad00bd5fae, type: 2}
-  - {fileID: 11400000, guid: a620da9f56dc1b84e8bbb973b297d966, type: 2}
+  - {fileID: 11400000, guid: 94e1c7ff24d6e0541a8356a26072b509, type: 2}
   - {fileID: 11400000, guid: 26f0b68675d1e8a4e90aec4171f70c3f, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
