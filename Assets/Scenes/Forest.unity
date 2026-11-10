@@ -18516,10 +18516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: ee05d77d0c86b7b4699a310f01a9451d, type: 2}
-  - {fileID: 11400000, guid: 77662867a89f13741a6d5d4c1fda7528, type: 2}
-  - {fileID: 11400000, guid: 06af5e4b80fed5b49829779a9c9fcea3, type: 2}
-  - {fileID: 11400000, guid: 94e1c7ff24d6e0541a8356a26072b509, type: 2}
-  - {fileID: 11400000, guid: 26f0b68675d1e8a4e90aec4171f70c3f, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
   towerBuildController: {fileID: 1197215444}

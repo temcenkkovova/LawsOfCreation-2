@@ -18,6 +18,11 @@ public class ChooseRuleController : MonoBehaviour
   void Start()
   {
     ruleManager = GetComponent<RuleManager>();
+    if (!GameStateController.Instance.IsStartData)
+    {
+      currentChooseRules = GameStateController.Instance.choseRuleConfig;
+      RebuildSelectedRules();
+    }
   }
 
   public void SetRule(RuleConfig rule)

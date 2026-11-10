@@ -14,6 +14,7 @@ public class WaveStateUI : MonoBehaviour
   public TowerBuildController towerBuildController;
   public Button startWaveBtn;
 
+
   void Start()
   {
     ShowGameState(waveController.CurrentWaveState);
@@ -24,6 +25,7 @@ public class WaveStateUI : MonoBehaviour
     waveController.OnWaveStarted += ShowPossibleTowerAmount;
     ShowPossibleTowerAmount(0);
     towerBuildController.OnTowerBuilded += ShowBuildedTowerAmount;
+
   }
 
   void OnDisable()

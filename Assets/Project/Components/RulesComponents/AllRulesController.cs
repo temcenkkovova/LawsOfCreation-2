@@ -14,7 +14,18 @@ public class AllRulesController : MonoBehaviour
 
   void Start()
   {
+
+    if (!GameStateController.Instance.IsStartData)
+    {
+
+      List<RuleConfig> previousRules = GameStateController.Instance.choseRuleConfig;
+      foreach (RuleConfig rule in previousRules)
+      {
+        ChangeRulesList(rule);
+      }
+    }
     RebuildRules();
+
   }
 
   public void RebuildRules()

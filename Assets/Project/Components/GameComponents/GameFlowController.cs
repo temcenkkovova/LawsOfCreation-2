@@ -10,6 +10,9 @@ public class GameFlowController : MonoBehaviour
   public PathManager pathManager;
   public MainCastle castle;
   public TowerBuildController towerBuildController;
+  public bool IsLastWave { get; private set; }
+  public event Action OnLastWave;
+
 
   public event Action OnWaveIndexChanged;
   void Awake()
@@ -23,6 +26,11 @@ public class GameFlowController : MonoBehaviour
     GameStateController.Instance.OnGameStateChanged += OnGameStateChanged;
     enemyWaveController.OnAllEnemiesDefeated += FinishCurrentWave;
 
+  }
+
+  void OnEnable()
+  {
+    IsLastWave = false;
   }
   void OnDisable()
   {
@@ -46,6 +54,11 @@ public class GameFlowController : MonoBehaviour
     WaveConfig config = waveConfigs[currentIndexWave];
     waveController.FinishWave(config.Reward);
 
+    if (IsLastWave)
+    {
+      OnLastWave?.Invoke();
+    }
+
   }
   public void StartCurrentWave()
   {
@@ -58,8 +71,9 @@ public class GameFlowController : MonoBehaviour
     waveController.StartWave(config.indexWave, config.duration);
     if (currentIndexWave == waveConfigs.Length - 1) /*It`s a temporary solution */
     {
+      IsLastWave = true;
       Debug.Log("You won all  waves");
-      currentIndexWave = 0;
+
     }
     else
     {
