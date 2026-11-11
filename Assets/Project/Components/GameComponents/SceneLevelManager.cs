@@ -25,11 +25,11 @@ public class SceneLevelManager : MonoBehaviour
     SceneManager.LoadScene(scenes[index]);
     index++;
   }
-  public void RestartAllGame()
+  public void ResetSceneIndex()
   {
-    OnRestartGame?.Invoke();
+
     currentSceneIndex = 1;
-    SceneManager.LoadScene("GameScene");
+
 
   }
   private void Awake()

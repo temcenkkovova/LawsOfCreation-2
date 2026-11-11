@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.683054, g: 0.48584908, b: 1, a: 0.6313726}
+  m_Color: {r: 0.5372549, g: 0.45490196, b: 0.31764707, a: 0.6313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -228,8 +228,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294925708
-  m_fontColor: {r: 0.548965, g: 0.36320752, b: 1, a: 1}
+    rgba: 4292405486
+  m_fontColor: {r: 0.93333334, g: 0.9098039, b: 0.84705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 0.5372549, g: 0.45490196, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
+  m_Color: {r: 0.5372549, g: 0.45490196, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -592,8 +592,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293519849
-  m_fontColor: {r: 0.9137255, g: 0.9137255, b: 0.9137255, a: 1}
+    rgba: 4292405486
+  m_fontColor: {r: 0.93333334, g: 0.9098039, b: 0.84705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -727,8 +727,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4289049014
+  m_fontColor: {r: 0.7137255, g: 0.69411767, b: 0.64705884, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -900,6 +900,7 @@ MonoBehaviour:
   imageField: {fileID: 6823020513270329380}
   btnText: {fileID: 8101340923882027691}
   difficultyField: {fileID: 0}
+  ruleCardVFX: {fileID: 0}
 --- !u!114 &8160934520890406554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,18 +913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7298de774e008114088e3ed89ba5da6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseGlow: {fileID: 0}
-  baseBorder: {fileID: 0}
-  glowInside: {fileID: 0}
-  baseBackground: {fileID: 6823020512127405434}
-  backgroundImageTitle: {fileID: 0}
-  backgroundImageTitleGlow: {fileID: 0}
-  imageTitle: {fileID: 6823020513270329380}
-  baseBtn: {fileID: 4111790809402687488}
-  baseBtnBorder: {fileID: 0}
-  baseBtnGlow: {fileID: 0}
-  btnText: {fileID: 8101340923882027691}
   difficultyText: {fileID: 0}
+  slotButton: {fileID: 0}
+  lockPanel: {fileID: 0}
 --- !u!1 &6823020513270329402
 GameObject:
   m_ObjectHideFlags: 0

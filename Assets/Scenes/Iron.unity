@@ -3960,6 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCastleHealth: {fileID: 469071904}
   chooseRuleController: {fileID: 100252740}
+  gameManagerController: {fileID: 382897192}
 --- !u!114 &382897195
 MonoBehaviour:
   m_ObjectHideFlags: 0

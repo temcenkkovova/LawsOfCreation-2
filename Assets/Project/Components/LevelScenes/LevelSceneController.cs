@@ -6,16 +6,17 @@ public class LevelSceneController : MonoBehaviour
 {
   public MainCastleHealth mainCastleHealth;
   public ChooseRuleController chooseRuleController;
+  public GameManagerController gameManagerController;
 
   void OnDisable()
   {
     SceneLevelManager.Instance.OnNextScene -= SaveCurrentSceneLevelData;
-    SceneLevelManager.Instance.OnRestartGame -= HandleRestartGame;
+    gameManagerController.OnRestart -= HandleRestartGame;
   }
   void Start()
   {
     SceneLevelManager.Instance.OnNextScene += SaveCurrentSceneLevelData;
-    SceneLevelManager.Instance.OnRestartGame += HandleRestartGame;
+    gameManagerController.OnRestart += HandleRestartGame;
   }
   public void SaveCurrentSceneLevelData()
   {
