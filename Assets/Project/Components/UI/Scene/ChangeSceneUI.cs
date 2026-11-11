@@ -16,7 +16,13 @@ public class ChangeSceneUI : MonoBehaviour
     if (gameFlowController == null) return;
     gameFlowController.OnLastWave += ChangeBtnsState;
 
-
+    darkSequence.Kill();
+    darkSequence = DOTween.Sequence();
+    darkSequence.Insert(0f, darkScreenImage.DOFade(0f, 0.5f)).SetEase(Ease.InQuad).OnComplete(HidePanel);
+  }
+  public void HidePanel()
+  {
+    panel.SetActive(false);
   }
 
   void OnDisable()
@@ -36,11 +42,11 @@ public class ChangeSceneUI : MonoBehaviour
     panel.SetActive(true);
     darkSequence.Kill();
     darkSequence = DOTween.Sequence();
-    darkSequence.Insert(0f, darkScreenImage.DOFade(1f, 0.8f)).SetEase(Ease.InQuad).OnComplete(Test);
+    darkSequence.Insert(0f, darkScreenImage.DOFade(1f, 0.8f)).SetEase(Ease.InQuad).OnComplete(HandleNextScene);
     //arrivalSequence.Append(arrivalGlow.DOFade(0f, 0.16f).SetEase(Ease.InQuad));
 
   }
-  public void Test()
+  public void HandleNextScene()
   {
     SceneLevelManager.Instance.TryStartNextScene();
   }

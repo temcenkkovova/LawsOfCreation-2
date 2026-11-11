@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cbaeb8dc42cac498b9e92e5cac6725, type: 3}
   m_Name: MainCastleAttack
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 1
   attackInterval: 1
   attackType: 1
   radiusAttack: 40
