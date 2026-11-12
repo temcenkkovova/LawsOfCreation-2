@@ -12,6 +12,6 @@ public class EnemyMiniBoosRule : RuleConfig
   {
     enemy.health.SetShield(ShieldHealth);
     enemy.enemyMovement.SetSpeedMultiplier(Speed);
-    enemy.transform.localScale += scalePrefab;
+    enemy.transform.localScale *= 1.2f;
   }
 }

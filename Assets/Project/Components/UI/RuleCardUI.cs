@@ -13,7 +13,7 @@ public class RuleCardUI : MonoBehaviour, IPointerClickHandler
   public Image imageField;
   public TMP_Text btnText;
   public TMP_Text difficultyField;
-  private RuleCardVFX ruleCardVFX;
+  public RuleCardVFX ruleCardVFX;
   private bool activeRule;
   public void OnPointerClick(PointerEventData eventData)
   {
@@ -28,12 +28,13 @@ public class RuleCardUI : MonoBehaviour, IPointerClickHandler
 
   }
 
-  void Awake()
+  void Start()
   {
-    ruleCardVFX = GetComponent<RuleCardVFX>();
+
   }
   public void SetData(RuleConfig rule, int indexWave)
   {
+
 
     ruleConfig = rule;
     titleTextField.text = rule.title;
@@ -50,6 +51,12 @@ public class RuleCardUI : MonoBehaviour, IPointerClickHandler
     }
 
     if (ruleCardVFX != null)
-      ruleCardVFX.ApplyStyle(rule.styleConfig, indexWave >= rule.minWave);
+    {
+
+      ruleCardVFX.ApplyStyle(rule.minWave <= indexWave);
+    }
+
+
+
   }
 }

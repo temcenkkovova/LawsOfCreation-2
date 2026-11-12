@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManagerController : MonoBehaviour
 {
   public MainCastleHealth castleHealth;
+  public event Action OnRestart;
 
   void Start()
   {
@@ -29,6 +31,8 @@ public class GameManagerController : MonoBehaviour
   }
   public void RestartGame()
   {
+    OnRestart?.Invoke();
+    SceneLevelManager.Instance.ResetSceneIndex();
     GameStateController.Instance.SetState(GameState.Gameplay);
     SceneManager.LoadScene("GameScene");
   }

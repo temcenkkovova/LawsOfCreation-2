@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6755643efdfafd24fb86ee6b43580dbb, type: 3}
-  m_Name: Wave-5
+  m_Name: Wave-3
   m_EditorClassIdentifier: 
-  indexWave: 5
-  duration: 130
+  indexWave: 3
+  duration: 140
   waveDifficulties: 1
   pathType: 0
   enemies:
@@ -21,25 +21,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
-  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
-  - {fileID: 11400000, guid: 609a8eca8c9614446a3bcc05567d4425, type: 2}
-  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
-  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
-  Reward: 40
-  maxTowerAmount: 5
-  spawnInterval: 1.125
+  Reward: 30
+  maxTowerAmount: 3
+  spawnInterval: 1.5

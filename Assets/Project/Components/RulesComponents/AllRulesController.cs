@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,22 +9,47 @@ public class AllRulesController : MonoBehaviour
   public Transform gridParent;
   public List<RuleConfig> rules = new();
   public GameFlowController gameFlowController;
+  private int cardsToShow = 4;
+
 
   void Start()
   {
+
+    if (!GameStateController.Instance.IsStartData)
+    {
+
+      List<RuleConfig> previousRules = GameStateController.Instance.choseRuleConfig;
+      foreach (RuleConfig rule in previousRules)
+      {
+        ChangeRulesList(rule);
+      }
+    }
     RebuildRules();
+
   }
 
   public void RebuildRules()
   {
+
     foreach (Transform child in gridParent)
       Destroy(child.gameObject);
 
-    foreach (var item in rules)
+
+    List<RuleConfig> copyListRules = new List<RuleConfig>(rules);
+    int currentWave = gameFlowController.currentIndexWave + 1;
+
+
+    for (int i = 0; i < cardsToShow; i++)
     {
-      bool active = gameFlowController.currentIndexWave + 1 >= item.minWave;
+      if (copyListRules.Count == 0) break;
+
+      int randomNumberIndex = Random.Range(0, copyListRules.Count);
+
+      RuleConfig ruleConfig = copyListRules[randomNumberIndex];
+      copyListRules.RemoveAt(randomNumberIndex);
+      bool active = gameFlowController.currentIndexWave + 1 >= ruleConfig.minWave;
       Button slot = Instantiate(ruleSlotPrefab, gridParent);
-      slot.GetComponent<RuleCardUI>().SetData(item, gameFlowController.currentIndexWave + 1);
+      slot.GetComponent<RuleCardUI>().SetData(ruleConfig, currentWave);
       slot.GetComponent<RuleCardUI>().SetActive(active);
       slot.interactable = active;
     }
@@ -39,6 +64,11 @@ public class AllRulesController : MonoBehaviour
   {
     if (!rules.Contains(rule)) rules.Add(rule);
     RebuildRules();
+  }
+
+  void OnEnable()
+  {
+
   }
 }
 

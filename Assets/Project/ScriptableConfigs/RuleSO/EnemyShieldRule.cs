@@ -10,6 +10,6 @@ public class EnemyShieldRule : RuleConfig
   public override void Apply(Enemy enemy)
   {
     enemy.health.SetShield(ShieldHealth);
-    enemy.transform.localScale += scalePrefab;
+    enemy.transform.localScale *= 1.2f;
   }
 }

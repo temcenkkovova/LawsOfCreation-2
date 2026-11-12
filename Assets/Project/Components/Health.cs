@@ -27,7 +27,9 @@ public abstract class Health : MonoBehaviour, IDamageable
     float damage = damageInfo.Damage;
     if (Shield > 0)
     {
+
       float damageToShield = Mathf.Min(Shield, damage);
+      Debug.Log(damageToShield);
       Shield -= damageToShield;
       damage -= damageToShield;
     }
@@ -45,7 +47,7 @@ public abstract class Health : MonoBehaviour, IDamageable
       }
       else
       {
-        currentHealth -= damage;
+
         OnHealthChanged?.Invoke(currentHealth);
         OnDamaged?.Invoke(damageInfo);
       }

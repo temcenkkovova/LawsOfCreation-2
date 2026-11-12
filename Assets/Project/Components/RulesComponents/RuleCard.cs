@@ -13,9 +13,7 @@ public class RuleCard : MonoBehaviour
   public TMP_Text tipOfRule;
   private RuleManager RuleManager;
   private RuleConfig config;
-  public GameObject SelectedBtn;
-  public GameObject RemoveBtn;
-  public GameObject closeCardBtn;
+
   public Transform leftCardSectionGrid;
   public RuleCardUI leftCardPrefab;
   private OpenRuleCardVFX ruleCardVFX;
@@ -40,8 +38,8 @@ public class RuleCard : MonoBehaviour
   {
     RuleCardUI leftCard = Instantiate(leftCardPrefab, leftCardSectionGrid);
     leftCard.SetData(rule, 0);
-    iconRule.sprite = rule.icon;
-    detailImage.sprite = rule.icon;
+    //iconRule.sprite = rule.icon;
+    //detailImage.sprite = rule.icon;
     title.text = rule.title;
     typeOfRule.text = rule.ruleType.ToString();
     description.text = rule.description;
@@ -63,13 +61,13 @@ public class RuleCard : MonoBehaviour
 
   public void HideSelectedButton()
   {
-    SelectedBtn.SetActive(false);
-    RemoveBtn.SetActive(true);
+    //SelectedBtn.SetActive(false);
+    //RemoveBtn.SetActive(true);
   }
   public void ShowSelectedButton()
   {
-    SelectedBtn.SetActive(true);
-    RemoveBtn.SetActive(false);
+    //SelectedBtn.SetActive(true);
+    // RemoveBtn.SetActive(false);
   }
   public void CloseCard()
   {

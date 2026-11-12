@@ -11,12 +11,18 @@ public class ChooseRuleController : MonoBehaviour
   [NonSerialized] public List<RuleConfig> currentChooseRules = new();
   public int maxCountCurrentRules = 3;
   public GameObject ruleSlotPrefab;
+  public GameObject ruleSlotWithoutBtnPrefab;
   public Transform gridParent;
   private RuleManager ruleManager;
 
   void Start()
   {
     ruleManager = GetComponent<RuleManager>();
+    if (!GameStateController.Instance.IsStartData)
+    {
+      currentChooseRules = GameStateController.Instance.choseRuleConfig;
+      RebuildSelectedRules();
+    }
   }
 
   public void SetRule(RuleConfig rule)
@@ -31,8 +37,10 @@ public class ChooseRuleController : MonoBehaviour
   }
   public void RebuildSelectedRules()
   {
+
     foreach (Transform child in gridParent)
       Destroy(child.gameObject);
+
 
 
     foreach (var item in currentChooseRules)
@@ -42,9 +50,14 @@ public class ChooseRuleController : MonoBehaviour
       slot.GetComponent<ChooseRuleCard>().Init(item, ruleManager);
 
     }
-    for (int i = currentChooseRules.Count; i < maxCountCurrentRules; i++)
+    int freePlace = maxCountCurrentRules - currentChooseRules.Count;
+    if (freePlace != 0)
     {
-      GameObject slot = Instantiate(ruleSlotPrefab, gridParent);
+      for (int i = 0; i < freePlace; i++)
+      {
+        GameObject slot = Instantiate(ruleSlotWithoutBtnPrefab, gridParent);
+      }
     }
+
   }
 }

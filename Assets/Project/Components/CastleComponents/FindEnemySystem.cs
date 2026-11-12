@@ -56,7 +56,7 @@ public class FindEnemySystem : MonoBehaviour
   public void SetConfigData(AttackConfig config, IEnemyProvider enemyProvider)
   {
     radiusSqr = config.radiusAttack * config.radiusAttack;
-    Debug.Log(radiusSqr);
+
     this.enemyProvider = enemyProvider;
   }
 }

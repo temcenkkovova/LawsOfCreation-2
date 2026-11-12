@@ -12,10 +12,10 @@ public class OpenRuleCardVFX : MonoBehaviour
 
   public void ApplyStyle(RuleStyleConfig styleConfig)
   {
-    typeRule.color = styleConfig.glowColor;
+    //typeRule.color = styleConfig.glowColor;
 
-    detailBorder.color = styleConfig.glowColor;
-    detailImage.color = styleConfig.glowColor;
+    //detailBorder.color = styleConfig.glowColor;
+    //detailImage.color = styleConfig.glowColor;
 
   }
 }

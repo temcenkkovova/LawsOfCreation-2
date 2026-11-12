@@ -25,10 +25,32 @@ public class CastleRotate : MonoBehaviour
   {
 
     if (currentTarget == null || rotateTransform == null) return;
+    Vector3 worldDir =
+        currentTarget.transform.position - rotateTransform.position;
+    Transform parent = rotateTransform.parent;
 
-    Vector3 dir = currentTarget.transform.position - rotateTransform.position;
-    dir.y = 0f;
-    rotateTransform.rotation = Quaternion.Slerp(rotateTransform.rotation, Quaternion.LookRotation(dir), rotateSpeed * Time.deltaTime);
+    Vector3 localDir = parent != null
+        ? parent.InverseTransformDirection(worldDir)
+        : worldDir;
+
+
+    localDir.z = 0f;
+
+    if (localDir.sqrMagnitude < 0.0001f)
+      return;
+
+
+    float targetAngle =
+        Mathf.Atan2(localDir.x, -localDir.y) * Mathf.Rad2Deg;
+
+    float angle = Mathf.LerpAngle(
+        rotateTransform.localEulerAngles.z,
+        targetAngle,
+        rotateSpeed * Time.deltaTime
+    );
+
+
+    rotateTransform.localRotation = Quaternion.Euler(0f, 0f, angle);
   }
 
   public void SetEnemyTarget(Enemy enemy)

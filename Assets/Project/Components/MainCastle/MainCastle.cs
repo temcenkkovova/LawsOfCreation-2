@@ -26,6 +26,11 @@ public class MainCastle : MonoBehaviour
   void Start()
   {
     Init();
+
+    if (!GameStateController.Instance.IsStartData)
+    {
+      InitHealthPreviousLocation(GameStateController.Instance.MainCastleHealth);
+    }
   }
 
   public void Init()
@@ -37,6 +42,11 @@ public class MainCastle : MonoBehaviour
     castleAttackController.SetConfig(castleConfig.attackConfig);
     attackAudio.Init(castleConfig.audioConfig);
     hitAudio.Init(castleConfig.audioConfig);
+  }
+
+  public void InitHealthPreviousLocation(float value)
+  {
+    health.Init(value);
   }
 
 }
