@@ -15,6 +15,8 @@ public class BuildSpot : MonoBehaviour
   {
     if (towerBuildController != null)
       towerBuildController.OnTowerBuilded += HideSpot;
+    if (GameEconomy.Instance != null)
+      HasCoinToBuild();
   }
   void Start()
   {
@@ -22,6 +24,7 @@ public class BuildSpot : MonoBehaviour
 
     HasCoinToBuild();
   }
+
 
   void OnDisable()
   {
@@ -50,6 +53,7 @@ public class BuildSpot : MonoBehaviour
   public void SetSpotCastle(Castle castle)
   {
     ownSpotCastle = castle;
+
   }
   public void HasCoinToBuild()
   {

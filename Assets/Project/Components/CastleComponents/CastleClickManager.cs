@@ -65,7 +65,7 @@ public class CastleClickManager : MonoBehaviour
         if (newSpot != null)
         {
           if (newSpot == currentBuildStop) return;
-          Debug.Log("qs");
+
           ClearTowerSelection();
           currentBuildStop?.HideSpotUIMenu();
           currentBuildStop = newSpot;

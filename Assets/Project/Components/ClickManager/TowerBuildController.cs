@@ -45,7 +45,7 @@ public class TowerBuildController : MonoBehaviour
     else
     {
       if (!gameEconomy.TrySpend(towerConfig.cost)) return;
-      Quaternion rotation = Quaternion.Euler(0f, 0f, 0f); //3.44
+      Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
       Vector3 pos = new Vector3(buildSpot.transform.position.x, 0f, buildSpot.transform.position.z);
       Castle castle = Instantiate(towerConfig.prefab, pos, rotation);
       castle.SetConfig(towerConfig, enemyWaveController);
