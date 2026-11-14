@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LaygoOverride
+  m_Controller: {fileID: 9100000, guid: f1a21d15ed9748646b3d9c7f2ab5e943, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 642faf64a0659924ab35d4df07dcd136, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cd3031eec1430a5439663ed03b75f494, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 803dac6b50488754a80cc74f4f583a3a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ee1d10a120a4f1a4dac7bcdf45e6cbea, type: 2}
