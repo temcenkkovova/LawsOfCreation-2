@@ -1,6 +1,11 @@
 using System;
-
+using System.Collections.Generic;
 using UnityEngine;
+public struct NextLevelData
+{
+  public float damage;
+  public float radius;
+}
 
 public class CastleLevelSystem : MonoBehaviour
 {
@@ -12,6 +17,17 @@ public class CastleLevelSystem : MonoBehaviour
   public int MaxLevels => castle.config.levels.Length;
   public event Action<int> OnLevelChanged;
   public event Action<TowerLevel> OnNewTowerData;
+
+  public NextLevelData GetNextLevelData()
+  {
+    TowerLevel nextLevel = castle.config.levels[currentTowerLevel + 1];
+    NextLevelData data = new NextLevelData
+    {
+      damage = nextLevel.attackConfig.attackDamage,
+      radius = nextLevel.attackConfig.radiusAttack
+    };
+    return data;
+  }
 
   void Awake()
   {

@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 50
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ed5daab843e816447bfb27b1abea40b9, type: 2}
-  m_sharedMaterial: {fileID: 9172555598039390155, guid: ed5daab843e816447bfb27b1abea40b9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a135da7d62cc46a4d8e350a25456fcda, type: 2}
+  m_sharedMaterial: {fileID: 6769970949166757079, guid: a135da7d62cc46a4d8e350a25456fcda, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb66d402cb9f1c47b98c3be6b3e50fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildSpot: {fileID: 0}
 --- !u!114 &410731311062326116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,9 +374,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eca14039197f29449a4176f1a1dacd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleField: {fileID: 3163056572891404058}
+  nameTowerField: {fileID: 0}
   costField: {fileID: 749169893988538993}
-  towerSlot: {fileID: -4609570712671572570}
+  towerIcon: {fileID: 0}
+  buildSpot: {fileID: 0}
+  iconField: {fileID: 0}
+  rangeField: {fileID: 0}
+  damageField: {fileID: 0}
+  panel: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3163056572891404036
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,8 +453,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ed5daab843e816447bfb27b1abea40b9, type: 2}
-  m_sharedMaterial: {fileID: 9172555598039390155, guid: ed5daab843e816447bfb27b1abea40b9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 420e04fad42f63243b91461a530aaa77, type: 2}
+  m_sharedMaterial: {fileID: 52452520986903896, guid: 420e04fad42f63243b91461a530aaa77, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -469,8 +478,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
