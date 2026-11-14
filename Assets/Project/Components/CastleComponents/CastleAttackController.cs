@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CastleAttackController : MonoBehaviour
 {
-  private AttackConfig attackConfig;
+  public AttackConfig attackConfig { get; private set; }
   private CastleShoot castleShoot;
   private Enemy currentTarget;
   private float shootTimer;

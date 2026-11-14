@@ -36,12 +36,14 @@ public class TowerSlotUI : MonoBehaviour
 
   public void ShowSlotPanel()
   {
-    Debug.Log("qaas");
+
     panel.SetActive(true);
-    //nameTowerField.text = config.name;
-    //costField.text = config.cost.ToString();
-    damageField.text = "20";
-    rangeField.text = "2";
+    nameTowerField.text = "ARCANE TOWER";
+    costField.text = "50";
+
+
+    damageField.text = "15";
+    rangeField.text = "3";
 
   }
   public void HideSlotPanel()

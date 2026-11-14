@@ -58,6 +58,18 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
     }
   }
 
+  public float GetTowerAttackDamage()
+  {
+    return castleAttackController.attackConfig.attackDamage;
+  }
+  public float GetTowerAttackRange()
+  {
+    return castleAttackController.attackConfig.radiusAttack;
+  }
+  public string GetTowerName()
+  {
+    return castleLevelSystem.levelData.name;
+  }
   public int GetSellValue()
   {
     return BuyCost;

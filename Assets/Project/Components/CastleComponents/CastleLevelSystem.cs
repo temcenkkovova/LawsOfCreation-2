@@ -7,7 +7,7 @@ public class CastleLevelSystem : MonoBehaviour
   [NonSerialized] public int currentTowerLevel;
   public bool IsNextLevel => currentTowerLevel + 1 < castle.config.levels.Length ? true : false;
   public int UpdateCost => castle.config.levels[currentTowerLevel].updateCost;
-  private TowerLevel levelData;
+  public TowerLevel levelData { get; private set; }
   private Castle castle;
   public int MaxLevels => castle.config.levels.Length;
   public event Action<int> OnLevelChanged;
