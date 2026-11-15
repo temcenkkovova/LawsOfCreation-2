@@ -23835,8 +23835,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2eea4ee32b37f7949bbe0bbcc2402942, type: 2}
   - {fileID: 11400000, guid: c832de0c97144ec4ca9c35830ade68b6, type: 2}
   - {fileID: 11400000, guid: eb43ef9525e81104d80b8c4272b34ee8, type: 2}
-  - {fileID: 11400000, guid: 9ce9dfdd4b255e74ca5f71c398244fe6, type: 2}
-  - {fileID: 11400000, guid: 713a1d54e44c426459175a65c21d919e, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
   towerBuildController: {fileID: 1197215444}

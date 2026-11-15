@@ -8620,6 +8620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path1: {fileID: 386191351}
+  path2: {fileID: 0}
 --- !u!4 &894157436
 Transform:
   m_ObjectHideFlags: 0
@@ -17258,11 +17259,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveConfigs:
-  - {fileID: 11400000, guid: 11ecfd4e3d9ae054b9b50e2ee668eb4f, type: 2}
-  - {fileID: 11400000, guid: 6763e04d28399b749860add03101c0e7, type: 2}
-  - {fileID: 11400000, guid: 06af5e4b80fed5b49829779a9c9fcea3, type: 2}
-  - {fileID: 11400000, guid: 94e1c7ff24d6e0541a8356a26072b509, type: 2}
-  - {fileID: 11400000, guid: b104eb2dfe946af488d7ed79d70231ef, type: 2}
+  - {fileID: 11400000, guid: 95f5e5cd8d3bb2c44a459c3558c4383e, type: 2}
+  - {fileID: 11400000, guid: 8dd2ad8052b55704aa7cc4671c84e80b, type: 2}
+  - {fileID: 11400000, guid: 1fb3e335264884b46b126b7f95a9c3de, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
   towerBuildController: {fileID: 1197215444}

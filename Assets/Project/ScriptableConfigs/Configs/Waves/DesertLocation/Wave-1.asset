@@ -15,7 +15,7 @@ MonoBehaviour:
   indexWave: 1
   duration: 160
   waveDifficulties: 0
-  pathType: 0
+  pathType: 1
   enemies:
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
