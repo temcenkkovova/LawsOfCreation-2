@@ -17258,10 +17258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveConfigs:
-  - {fileID: 11400000, guid: ee05d77d0c86b7b4699a310f01a9451d, type: 2}
+  - {fileID: 11400000, guid: 11ecfd4e3d9ae054b9b50e2ee668eb4f, type: 2}
   - {fileID: 11400000, guid: 6763e04d28399b749860add03101c0e7, type: 2}
   - {fileID: 11400000, guid: 06af5e4b80fed5b49829779a9c9fcea3, type: 2}
-  - {fileID: 11400000, guid: acec60de01f7f7b479159ea25cc04abd, type: 2}
+  - {fileID: 11400000, guid: 94e1c7ff24d6e0541a8356a26072b509, type: 2}
   - {fileID: 11400000, guid: b104eb2dfe946af488d7ed79d70231ef, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}

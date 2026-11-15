@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5258e614d5b9e204b86012837ba4f73b, type: 3}
   m_Name: CugaBossConfig
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5464974434117818535, guid: ace2ad86325be614199fbccd8c9ca4d9, type: 3}
+  prefab: {fileID: 3125844101432953078, guid: b56b2e9b8337c7b46a9eb750bdcc91c2, type: 3}
   maxHealth: 800
   coinReward: 250
   speed: 5
   attackConfig: {fileID: 11400000, guid: a11cf043cd0f2b6418899160994e9b94, type: 2}
+  audioConfig: {fileID: 0}

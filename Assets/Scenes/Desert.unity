@@ -4165,12 +4165,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointers:
-  - {x: 73.3, y: 0, z: -90.4}
-  - {x: 67.4, y: 0, z: -54.7}
-  - {x: -120.2, y: 0, z: -50.2}
-  - {x: -104.1, y: 0, z: 34.7}
-  - {x: 15.9, y: 0, z: 34.9}
-  - {x: 13.1, y: 0, z: 61}
+  - {x: 64.8, y: 0, z: -87.9}
+  - {x: 64.8, y: 0, z: -61.4}
+  - {x: -7.7, y: 0, z: -61.4}
+  - {x: -7.7, y: 0, z: -24.1}
+  - {x: 8.7, y: 0, z: -22.3}
+  - {x: 8.7, y: 0, z: -3.4}
+  - {x: 59.3, y: 0, z: -0.7}
+  - {x: 59.3, y: 0, z: 31.5}
+  - {x: 16.5, y: 0, z: 31.5}
+  - {x: 18.2, y: 0, z: 55.9}
 --- !u!4 &386191352
 Transform:
   m_ObjectHideFlags: 0
@@ -10069,6 +10073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path1: {fileID: 386191351}
+  path2: {fileID: 1446272199}
 --- !u!4 &894157436
 Transform:
   m_ObjectHideFlags: 0
@@ -14994,6 +14999,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428601745}
   m_CullTransparentMesh: 1
+--- !u!1 &1446272198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1446272200}
+  - component: {fileID: 1446272199}
+  m_Layer: 0
+  m_Name: Paths2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1446272199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446272198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47505b0e110ed8b4dacd97a69f11b20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointers:
+  - {x: 64.8, y: 0, z: -87.9}
+  - {x: 64.8, y: 0, z: -61.4}
+  - {x: 143, y: 0, z: -59}
+  - {x: 113.6, y: 0, z: 30.2}
+  - {x: 17.2, y: 0, z: 32.2}
+  - {x: 17.2, y: 0, z: 59.2}
+--- !u!4 &1446272200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446272198}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1448395798
 GameObject:
   m_ObjectHideFlags: 0
@@ -20299,6 +20355,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: ee05d77d0c86b7b4699a310f01a9451d, type: 2}
+  - {fileID: 11400000, guid: c69797a4da4c71c4194cb8381c2fe7d2, type: 2}
+  - {fileID: 11400000, guid: b0fd4777b67ede84883544a1ec4a2e15, type: 2}
+  - {fileID: 11400000, guid: 01319199606641849820b872d17163af, type: 2}
+  - {fileID: 11400000, guid: c4c5275f8f4879b4390cfc2f00c770eb, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
   towerBuildController: {fileID: 1197215444}

@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
   private List<Vector3> points;
   private int currentIndexPathPoint = 0;
 
+  public bool IsMoving { get; private set; } = false;
+
 
   public void SetDataMovement(float baseSpeed, Transform transformTarget, List<Vector3> path)
   {
@@ -54,11 +56,17 @@ public class EnemyMovement : MonoBehaviour
       return;
     }
     Vector3 dir = delta.normalized;
+    if (dir.sqrMagnitude < 0.01)
+    {
+      IsMoving = false;
+      return;
+    }
 
     transform.position += dir * CurrentSpeed * Time.deltaTime;
-    if (dir.sqrMagnitude > 0.0001f)
-      transform.rotation = Quaternion.LookRotation(dir);
+    transform.rotation = Quaternion.LookRotation(dir);
 
+
+    IsMoving = true;
     if (Vector3.Distance(transform.position, target) < 0.1f) currentIndexPathPoint++;
   }
 

@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class EnemyAnimationController : MonoBehaviour
 {
-  [NonSerialized] public Animator animator;
-  void Awake()
-  {
-    animator = GetComponent<Animator>();
-    GameStateController.Instance.OnGameStateChanged += ActiveStatusAnimator;
-  }
+  public Animator animator;
+
   private float baseSpeed;
+  public bool isSprint = false;
   public void Initialize(float baseMoveSpeed)
   {
     baseSpeed = baseMoveSpeed;
+  }
+
+  void Start()
+  {
+
+    GameStateController.Instance.OnGameStateChanged += ActiveStatusAnimator;
+
   }
 
   void OnDisable()
@@ -23,9 +27,16 @@ public class EnemyAnimationController : MonoBehaviour
   public void UpdateMoveSpeed(float currentSpeed)
   {
 
-    float normalizedSpeed = currentSpeed / baseSpeed;
 
-    animator.SetFloat("MoveSpeed", normalizedSpeed);
+    if (isSprint)
+    {
+      animator.SetBool("IsRunning", true);
+    }
+    else
+    {
+      animator.SetBool("IsRunning", false);
+    }
+
   }
 
   public void TriggerAttack()
@@ -37,5 +48,18 @@ public class EnemyAnimationController : MonoBehaviour
   {
 
     animator.enabled = state == GameState.Gameplay;
+  }
+
+  private void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.T))
+    {
+
+
+      foreach (var info in animator.GetCurrentAnimatorClipInfo(0))
+      {
+        Debug.Log($"Играет клип: {info.clip.name}");
+      }
+    }
   }
 }

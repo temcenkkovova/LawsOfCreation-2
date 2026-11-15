@@ -12,7 +12,7 @@ public class CastleClickManager : MonoBehaviour
     if (selectedCastle != null)
       selectedCastle.OnSell -= HandleTowerSold;
 
-    // Проверяем существование Unity-компонента за интерфейсом.
+
     if (currentTowerSelected is MonoBehaviour component && component != null)
       currentTowerSelected.UnSelected();
 

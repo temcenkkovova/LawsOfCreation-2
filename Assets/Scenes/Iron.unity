@@ -1130,7 +1130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114070085
 GameObject:
@@ -1215,7 +1215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &114070088
 BoxCollider:
@@ -4783,12 +4783,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointers:
-  - {x: 73.3, y: 0, z: -90.4}
-  - {x: 67.4, y: 0, z: -54.7}
-  - {x: -120.2, y: 0, z: -50.2}
-  - {x: -104.1, y: 0, z: 34.7}
-  - {x: 15.9, y: 0, z: 34.9}
-  - {x: 13.1, y: 0, z: 61}
+  - {x: 69.3, y: 0, z: -101.3}
+  - {x: 65.7, y: 0, z: -58}
+  - {x: -48.4, y: 0, z: -58}
+  - {x: -45.5, y: 0, z: -6.6}
+  - {x: -125, y: 0, z: -6.6}
+  - {x: -114.2, y: 0, z: 44.3}
+  - {x: 9.4, y: 0, z: 45.1}
+  - {x: 9.4, y: 0, z: 51.4}
 --- !u!4 &386191352
 Transform:
   m_ObjectHideFlags: 0
@@ -4802,7 +4804,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &388282517
 GameObject:
@@ -6141,7 +6143,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 100, y: -29.59, z: 0}
 --- !u!1 &459839832
 GameObject:
@@ -6759,7 +6761,7 @@ Transform:
   - {fileID: 1554983288}
   - {fileID: 994359333}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476659941
 GameObject:
@@ -8005,7 +8007,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &560220070
 MonoBehaviour:
@@ -9760,7 +9762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &699693051
 AudioSource:
@@ -11745,6 +11747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path1: {fileID: 386191351}
+  path2: {fileID: 1522475244}
 --- !u!4 &894157436
 Transform:
   m_ObjectHideFlags: 0
@@ -18798,6 +18801,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516521583}
   m_CullTransparentMesh: 1
+--- !u!1 &1522475243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522475245}
+  - component: {fileID: 1522475244}
+  m_Layer: 0
+  m_Name: Paths2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1522475244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522475243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47505b0e110ed8b4dacd97a69f11b20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointers:
+  - {x: 69.3, y: 0, z: -101.3}
+  - {x: 65.7, y: 0, z: -58}
+  - {x: -7.4, y: 0, z: -54.6}
+  - {x: -7.4, y: 0, z: -1.2}
+  - {x: 24.3, y: 0, z: -1.2}
+  - {x: 19.3, y: 0, z: 51.3}
+--- !u!4 &1522475245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522475243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1537757020
 GameObject:
   m_ObjectHideFlags: 0
@@ -23778,7 +23832,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveConfigs:
-  - {fileID: 11400000, guid: ee05d77d0c86b7b4699a310f01a9451d, type: 2}
+  - {fileID: 11400000, guid: 2eea4ee32b37f7949bbe0bbcc2402942, type: 2}
+  - {fileID: 11400000, guid: c832de0c97144ec4ca9c35830ade68b6, type: 2}
+  - {fileID: 11400000, guid: eb43ef9525e81104d80b8c4272b34ee8, type: 2}
+  - {fileID: 11400000, guid: 9ce9dfdd4b255e74ca5f71c398244fe6, type: 2}
+  - {fileID: 11400000, guid: 713a1d54e44c426459175a65c21d919e, type: 2}
   pathManager: {fileID: 894157435}
   castle: {fileID: 469071903}
   towerBuildController: {fileID: 1197215444}

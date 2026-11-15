@@ -17,10 +17,11 @@ MonoBehaviour:
   waveDifficulties: 0
   pathType: 0
   enemies:
+  - {fileID: 11400000, guid: c1614a34840e71a4f8fcabf3f7d8f096, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
-  - {fileID: 11400000, guid: be079fadfea8f2446bff4c94c2c67400, type: 2}
   - {fileID: 11400000, guid: 100273e3d76734e48a162c4605f5f95f, type: 2}
+  - {fileID: 11400000, guid: a0b12ad964012f2499a2a370f96f0441, type: 2}
   Reward: 300
   maxTowerAmount: 12
-  spawnInterval: 0
+  spawnInterval: 2
