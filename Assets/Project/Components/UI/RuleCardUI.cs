@@ -38,7 +38,7 @@ public class RuleCardUI : MonoBehaviour, IPointerClickHandler
 
     ruleConfig = rule;
     titleTextField.text = rule.title;
-    descriptionTextField.text = rule.smallDescription;
+    descriptionTextField.text = rule.deBuffDescription;
     imageField.sprite = rule.icon;
     if (difficultyField != null)
     {

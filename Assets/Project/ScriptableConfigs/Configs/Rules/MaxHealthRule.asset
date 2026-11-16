@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: MaxHealthRule
   m_EditorClassIdentifier: 
   indexRule: 0
-  description: Enemies become tougher and harder to kill.
-  smallDescription: Enemies gain increased maximum health.
+  description: Tougher enemies, cheaper towers.
+  deBuffDescription: Enemies have 40% more health.
   title: Fortified Flesh
   icon: {fileID: 21300000, guid: 25e718eadb818844a9d418c666143eb5, type: 3}
+  buffDescription: Towers cost 20% less to build during this wave.
   ruleType: 0
   minWave: 1
   difficulty: 0
   rewardMultiply: 0.5
   styleConfig: {fileID: 11400000, guid: ef2af8e93fb373f4f95fc17705643a2c, type: 2}
-  MaxHealth: 0.4
+  MaxHealth: 0.2
   scalePrefab: {x: 3, y: 3, z: 3}
+  reduceCostCastlePercentage: 20

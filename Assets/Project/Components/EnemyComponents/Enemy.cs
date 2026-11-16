@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
   [NonSerialized] public EnemyHealth health;
   [NonSerialized] public Attack damage;
 
+  public float CoinRewards { get; private set; }
+
 
 
   [NonSerialized] public EnemyMovement enemyMovement;
@@ -37,7 +39,7 @@ public class Enemy : MonoBehaviour
     }
     enemyConfig = config;
     health.Init(enemyConfig.maxHealth);
-
+    CoinRewards = config.coinReward;
     enemyMovement.OnSpeedChanged += animationController.UpdateMoveSpeed;
 
     animationController.Initialize(enemyConfig.speed);
@@ -52,6 +54,11 @@ public class Enemy : MonoBehaviour
     if (audioComponent == null) return;
     audioComponent.Init(config.audioConfig);
 
+  }
+
+  public void MultiplyReward(float multiplyPercentage)
+  {
+    CoinRewards *= 1f + multiplyPercentage / 100f;
   }
 
   public void ApplyRules()

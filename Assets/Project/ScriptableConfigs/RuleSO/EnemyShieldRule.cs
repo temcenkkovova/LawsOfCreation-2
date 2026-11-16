@@ -6,10 +6,12 @@ public class EnemyShieldRule : RuleConfig
 {
   public int ShieldHealth;
   public Vector3 scalePrefab;
+  public float AttackIntervalPercentage;
 
   public override void Apply(Enemy enemy)
   {
     enemy.health.SetShield(ShieldHealth);
-    enemy.transform.localScale *= 1.2f;
+    TowersRulesManager.Instance.SetTowersAttackIntervalIncreasePercentage(AttackIntervalPercentage);
+    // enemy.transform.localScale *= 1.2f;
   }
 }

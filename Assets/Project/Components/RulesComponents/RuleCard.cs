@@ -43,7 +43,7 @@ public class RuleCard : MonoBehaviour
     title.text = rule.title;
     typeOfRule.text = rule.ruleType.ToString();
     description.text = rule.description;
-    secondDescription.text = rule.smallDescription;
+    secondDescription.text = rule.deBuffDescription;
     tipOfRule.text = "Combine with Regen to make a durable tank";
     RuleManager = manager;
     config = rule;

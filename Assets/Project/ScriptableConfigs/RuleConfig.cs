@@ -18,9 +18,10 @@ public abstract class RuleConfig : ScriptableObject, IRule
 {
   public int indexRule;
   public string description;
-  public string smallDescription;
+  public string deBuffDescription;
   public string title;
   public Sprite icon;
+  public string buffDescription;
 
   public RuleType ruleType;
   public int minWave;

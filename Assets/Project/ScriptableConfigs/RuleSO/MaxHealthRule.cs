@@ -6,10 +6,12 @@ public class MaxHealthRule : RuleConfig
 {
   public float MaxHealth;
   public Vector3 scalePrefab;
+  public float reduceCostCastlePercentage;
 
   public override void Apply(Enemy enemy)
   {
     enemy.health.HealthMultiply(MaxHealth);
-    enemy.transform.localScale *= 1.2f; // To make enemy visual greater;
+    //enemy.transform.localScale *= 1.2f; // To make enemy visual greater;
+    TowersRulesManager.Instance.SetBuildCostReducePercentage(reduceCostCastlePercentage);
   }
 }

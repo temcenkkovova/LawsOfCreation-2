@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MaxDamageRule
   m_EditorClassIdentifier: 
   indexRule: 2
-  description: Enemy attacks hit significantly harder.
-  smallDescription: Enemies deal more damage.
+  description: Deadlier enemies, harder-hitting towers.
+  deBuffDescription: Enemies deal 35% more damage.
   title: Brutal Strikes
   icon: {fileID: 21300000, guid: 800d185abdb574b4a819e24e6abf75f1, type: 3}
+  buffDescription: Towers deal 20% more damage.
   ruleType: 0
   minWave: 3
   difficulty: 0
@@ -24,3 +25,4 @@ MonoBehaviour:
   styleConfig: {fileID: 11400000, guid: 9c0b789f6a579204dbddd52996a7cde0, type: 2}
   MaxDamage: 0.35
   scalePrefab: {x: 1, y: 1, z: 1}
+  IncreaseTowerDamagePercentage: 20
