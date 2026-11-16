@@ -22,7 +22,7 @@ public class TowerUpgradeService : MonoBehaviour
     if (!castleLevelSystem.IsNextLevel) return;
     if (gameEconomy.TrySpend(castleLevelSystem.UpdateCost))
     {
-      castleLevelSystem.ApplyLevel(castleLevelSystem.currentTowerLevel + 1);
+      castleLevelSystem.ApplyLevel(castle.CastleData.CurrentLevel + 1);
       castle.UnSelected();
       OnUpgrade?.Invoke();
       //TowerMenuUI.Instance.Close();

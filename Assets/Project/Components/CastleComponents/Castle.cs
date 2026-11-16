@@ -20,6 +20,7 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
   private CastleLevelSystem castleLevelSystem;
   public event Action OnUnSelected;
   public event Action<Castle> OnSell;
+  public CastleData CastleData { get; private set; }
 
 
   [NonSerialized] public BuildSpot buildSpot;
@@ -35,15 +36,22 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
     castleLevelSystem = GetComponent<CastleLevelSystem>();
     castleLevelSystem.OnNewTowerData += NewLevelData;
   }
+  void Start()
+  {
+
+  }
 
   public void SetConfig(TowerConfig castleConfig, EnemyWaveController enemyWaveController)
   {
     config = castleConfig;
     enemyController = enemyWaveController;
 
+    CastleData = new CastleData(config);
+    castleLevelSystem.Init(CastleData);
+
   }
 
-  public void NewLevelData(TowerLevel towerLevel)
+  public void NewLevelData(TowerLevel towerLevel, int level)
   {
     if (health && attack && castleAttackController && findEnemySystem && attackAudio)
     {
@@ -54,7 +62,7 @@ public class Castle : MonoBehaviour, ISellable, ITowerSelectable
 
       findEnemySystem.SetConfigData(towerLevel.attackConfig, provider);
       attackAudio.Init(towerLevel.audioConfig);
-
+      CastleData.LevelUp(level, towerLevel.attackConfig);
     }
   }
 

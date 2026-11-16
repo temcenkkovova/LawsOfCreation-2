@@ -9,25 +9,15 @@ public struct NextLevelData
 
 public class CastleLevelSystem : MonoBehaviour
 {
-  [NonSerialized] public int currentTowerLevel;
-  public bool IsNextLevel => currentTowerLevel + 1 < castle.config.levels.Length ? true : false;
-  public int UpdateCost => castle.config.levels[currentTowerLevel].updateCost;
+  public int currentTowerLevel => castleData.CurrentLevel;
+  public bool IsNextLevel => castleData.CurrentLevel + 1 < castle.config.levels.Length ? true : false;
+  public int UpdateCost => castle.config.levels[castleData.CurrentLevel].updateCost;
   public TowerLevel levelData { get; private set; }
   private Castle castle;
   public int MaxLevels => castle.config.levels.Length;
-  public event Action<int> OnLevelChanged;
-  public event Action<TowerLevel> OnNewTowerData;
-
-  public NextLevelData GetNextLevelData()
-  {
-    TowerLevel nextLevel = castle.config.levels[currentTowerLevel + 1];
-    NextLevelData data = new NextLevelData
-    {
-      damage = nextLevel.attackConfig.attackDamage,
-      radius = nextLevel.attackConfig.radiusAttack
-    };
-    return data;
-  }
+  public event Action<int> OnLevelChanged; // Need to replace this event to CastleData  . Before need connect UI with this event in CastleData
+  public event Action<TowerLevel, int> OnNewTowerData;
+  public CastleData castleData { get; private set; }
 
   void Awake()
   {
@@ -37,15 +27,24 @@ public class CastleLevelSystem : MonoBehaviour
   {
 
     ApplyLevel(0);
+
   }
 
-  public void ApplyLevel(int indexLevel)
+  public void Init(CastleData castleData)
   {
+    this.castleData = castleData;
+  }
+
+  public void ApplyLevel(int newLevel)
+  {
+
     TowerConfig config = castle.config;
-    currentTowerLevel = indexLevel;
-    GameObject visualPrefab = config.levels[currentTowerLevel].visualPrefab;
-    levelData = config.levels[currentTowerLevel];
-    OnNewTowerData?.Invoke(levelData);
+    // currentTowerLevel = indexLevel;
+
+    GameObject visualPrefab = config.levels[newLevel].visualPrefab;
+    levelData = config.levels[newLevel];
+    //castleData.LevelUp(newLevel, levelData.attackConfig);
+    OnNewTowerData?.Invoke(levelData, newLevel);
     if (castle.VisualRoot.childCount > 0)
     {
       var children = castle.VisualRoot.GetChild(0).gameObject;
@@ -56,7 +55,7 @@ public class CastleLevelSystem : MonoBehaviour
     {
       castle.newVisual = Instantiate(visualPrefab, castle.VisualRoot);
     }
-    OnLevelChanged?.Invoke(currentTowerLevel);
+    OnLevelChanged?.Invoke(newLevel); // 
     Rotate rotate = castle.newVisual.GetComponentInChildren<Rotate>();
     if (rotate != null)
     {
@@ -66,5 +65,20 @@ public class CastleLevelSystem : MonoBehaviour
     {
       Debug.Log("Rotate missing on prefab: " + visualPrefab.name);
     }
+  }
+
+  void OnDisable()
+  {
+
+  }
+  public NextLevelData GetNextLevelData()
+  {
+    TowerLevel nextLevel = castle.config.levels[castleData.CurrentLevel + 1];
+    NextLevelData data = new NextLevelData
+    {
+      damage = nextLevel.attackConfig.attackDamage,
+      radius = nextLevel.attackConfig.radiusAttack
+    };
+    return data;
   }
 }
