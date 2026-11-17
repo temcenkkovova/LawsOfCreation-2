@@ -8,9 +8,16 @@ public class TowerUpgradeService : MonoBehaviour
   public event Action OnUpgrade;
 
 
-  void Awake()
+  private void Awake()
   {
+    if (Instance != null)
+    {
+      Destroy(gameObject);
+      return;
+    }
+
     Instance = this;
+
   }
 
 
@@ -22,6 +29,7 @@ public class TowerUpgradeService : MonoBehaviour
     if (!castleLevelSystem.IsNextLevel) return;
     if (gameEconomy.TrySpend(castleLevelSystem.UpdateCost))
     {
+
       castleLevelSystem.ApplyLevel(castle.CastleData.CurrentLevel + 1);
       castle.UnSelected();
       OnUpgrade?.Invoke();

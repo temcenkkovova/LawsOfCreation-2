@@ -8,6 +8,7 @@ public class CastleData
 
   public int CurrentLevel { get; private set; }
   public event Action<int> OnLevelChanged;
+  public event Action OnStatsChanged;
 
 
 
@@ -24,7 +25,16 @@ public class CastleData
     CurrentLevel = level;
     Damage = attackConfig.attackDamage;
     AttackInterval = attackConfig.attackInterval;
+    ApplyTowerRules();
     OnLevelChanged?.Invoke(CurrentLevel);
+  }
+
+
+  public void ApplyTowerRules()
+  {
+    Damage *= 1f + (TowersRulesManager.Instance.DamageIncreasePercentage / 100);
+    AttackInterval *= 1f + (TowersRulesManager.Instance.AttackIntervalIncreasePercentage / 100);
+    OnStatsChanged?.Invoke();
   }
 
 }

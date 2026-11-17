@@ -11,7 +11,7 @@ public class GameEconomy : MonoBehaviour
   {
     Instance = this;
   }
-  public bool TrySpend(int price)
+  public bool TrySpend(float price)
   {
     if (HasEnough(price))
     {
@@ -32,7 +32,7 @@ public class GameEconomy : MonoBehaviour
 
   }
 
-  public bool HasEnough(int amount)
+  public bool HasEnough(float amount)
   {
     return coinRewards.TotalCoin >= amount ? true : false;
   }

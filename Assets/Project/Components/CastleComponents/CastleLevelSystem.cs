@@ -11,7 +11,7 @@ public class CastleLevelSystem : MonoBehaviour
 {
   public int currentTowerLevel => castleData.CurrentLevel;
   public bool IsNextLevel => castleData.CurrentLevel + 1 < castle.config.levels.Length ? true : false;
-  public int UpdateCost => castle.config.levels[castleData.CurrentLevel].updateCost;
+  public float UpdateCost => levelData.updateCost;
   public TowerLevel levelData { get; private set; }
   private Castle castle;
   public int MaxLevels => castle.config.levels.Length;
@@ -42,7 +42,7 @@ public class CastleLevelSystem : MonoBehaviour
     // currentTowerLevel = indexLevel;
 
     GameObject visualPrefab = config.levels[newLevel].visualPrefab;
-    levelData = config.levels[newLevel];
+    levelData = new TowerLevel(config.levels[newLevel]);
     //castleData.LevelUp(newLevel, levelData.attackConfig);
     OnNewTowerData?.Invoke(levelData, newLevel);
     if (castle.VisualRoot.childCount > 0)
@@ -73,7 +73,7 @@ public class CastleLevelSystem : MonoBehaviour
   }
   public NextLevelData GetNextLevelData()
   {
-    TowerLevel nextLevel = castle.config.levels[castleData.CurrentLevel + 1];
+    TowerLevel nextLevel = castle.config.levels[currentTowerLevel + 1];
     NextLevelData data = new NextLevelData
     {
       damage = nextLevel.attackConfig.attackDamage,

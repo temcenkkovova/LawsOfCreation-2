@@ -14,41 +14,46 @@ public class PanelMenuItemsUI : MonoBehaviour
   public TMP_Text nextLevelDamageField;
   public TMP_Text nextLevelRadiusAttackField;
   private CastleLevelSystem castleLevelSystem;
-  private TowerUpgradeService towerUpgradeService;
 
 
+  void Start()
+  {
+    TowerUpgradeService.Instance.OnUpgrade += ShowTowerData;
+  }
   void OnEnable()
   {
     GameEconomy.Instance.coinRewards.OnChangeRewardCoin += RefreshUpdateButton;
+    TowerUpgradeService.Instance.OnUpgrade += ShowTowerData;
   }
 
   void OnDisable()
   {
     GameEconomy.Instance.coinRewards.OnChangeRewardCoin -= RefreshUpdateButton;
     if (castle != null) castleLevelSystem.OnLevelChanged -= OnLevelChanged;
-    if (towerUpgradeService != null) towerUpgradeService.OnUpgrade -= ShowTowerData;
+    TowerUpgradeService.Instance.OnUpgrade -= ShowTowerData;
   }
   public void Init(Castle castleRef)
   {
     castle = castleRef;
     castleLevelSystem = castle.GetComponent<CastleLevelSystem>();
-    towerUpgradeService = castle.GetComponent<TowerUpgradeService>();
+
     RefreshAll();
   }
 
   public void ShowTowerData()
   {
     NextLevelData nextLevelData = castleLevelSystem.GetNextLevelData();
+
     levelFieldText.text = "Level : " + (castleLevelSystem.currentTowerLevel + 1);
     costUpdateField.text = castleLevelSystem.UpdateCost.ToString();
-    currentDamageField.text = castleLevelSystem.levelData.attackConfig.attackDamage.ToString();
-    currentRadiusAttackField.text = (castleLevelSystem.levelData.attackConfig.radiusAttack * 100).ToString("F1");
+    currentDamageField.text = castleLevelSystem.levelData.attackConfig.attackDamage.ToString("F0");
+    currentRadiusAttackField.text = (castleLevelSystem.levelData.attackConfig.radiusAttack * 100).ToString("F0");
 
     if (castleLevelSystem.IsNextLevel)
     {
       ShowNextLevelDataPanel();
-      nextLevelDamageField.text = nextLevelData.damage.ToString();
-      nextLevelRadiusAttackField.text = (nextLevelData.radius * 100).ToString("F1");
+      nextLevelDamageField.text = nextLevelData.damage.ToString("F0");
+      nextLevelRadiusAttackField.text = (nextLevelData.radius * 100).ToString("F0");
     }
     else
     {
